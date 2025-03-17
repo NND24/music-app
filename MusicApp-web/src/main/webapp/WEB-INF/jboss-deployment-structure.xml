@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jboss-deployment-structure xmlns="urn:jboss:deployment-structure:1.2">
+    <deployment>
+        <dependencies>
+            <module name="javax.api" />
+            <module name="javax.jms.api" />
+            <module name="javax.ejb.api" />
+            <module name="org.hibernate" />
+            <module name="org.jboss.weld.core" />
+            <module name="org.jboss.classloading" />
+        </dependencies>
+    </deployment>
+</jboss-deployment-structure>
+
+
