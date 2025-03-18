@@ -25,7 +25,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet" />
         <!-- Link CSS -->
         <link rel="stylesheet" href="./assets/css/base.css?version=2" />
-        <link rel="stylesheet" href="./assets/css/main.css?version=1" />
+        <link rel="stylesheet" href="./assets/css/main.css?version=2" />
         <link rel="stylesheet" href="./assets/css/responsive.css" />
     </head>
     <body>
@@ -195,7 +195,7 @@
                             </div>
                         </li>
                         <li class="header__nav-item hide-on-mobile">
-                            <div class="header__nav-btn header__nav-icon">
+                            <div class="header__nav-btn header__nav-icon upload-button">
                                 <i class="bi bi-upload"></i>
                             </div>
                         </li>
@@ -293,243 +293,6 @@
                 </div>
             </header>
 
-            <!-- Sidebar -->
-            <div class="app__sidebar">
-                <div class="sidebar__logo hide-on-mobile">
-                    <a href="#" class="sidebar__logo-link">
-                        <img src="./assets/image/logos/main-logo.svg" alt="Logo" class="sidebar__logo-img" />
-                        <img src="./assets/image/logos/small-logo.svg" alt="Logo" class="sidebar__small-logo" />
-                    </a>
-                </div>
-                <div class="sidebar__nav">
-                    <ul class="sidebar__nav-list sidebar__nav-separate">
-                        <li class="sidebar__nav-item active">
-                            <a href="#" title="Cá nhân" class="sidebar__item-link">
-                                <i class="bi bi-music-player"></i>
-                                <span>Cá nhân</span>
-                                <div class="play-btn">
-                                    <i class="bi bi-play-circle"></i>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="sidebar__nav-item">
-                            <a href="#" title="Khám phá" class="sidebar__item-link">
-                                <i class="bi bi-vinyl"></i>
-                                <span>Khám phá</span>
-                            </a>
-                        </li>
-                        <li class="sidebar__nav-item">
-                            <a href="#" title="#zingchart" class="sidebar__item-link">
-                                <i class="bi bi-music-note-list"></i>
-                                <span>#zingchart</span>
-                                <div class="play-btn">
-                                    <i class="bi bi-play-circle"></i>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="sidebar__nav-item">
-                            <a href="#" title="Radio" class="sidebar__item-link">
-                                <i class="bi bi-soundwave"></i>
-                                <span>Radio</span>
-                                <div class="sidebar__nav-label">LIVE</div>
-                                <div class="play-btn">
-                                    <i class="bi bi-play-circle"></i>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="sidebar__nav-item">
-                            <a href="#" title="Theo dõi" class="sidebar__item-link">
-                                <i class="bi bi-file-earmark-slides"></i>
-                                <span>Theo dõi</span>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="sidebar__subnav hide-on-mobile">
-                    <ul class="sidebar__nav-list">
-                        <li class="sidebar__nav-item">
-                            <a href="#" title="Nhạc mới" class="sidebar__item-link">
-                                <i class="bi bi-music-note-beamed"></i>
-                                <span>Nhạc mới</span>
-                                <div class="play-btn">
-                                    <i class="bi bi-play-circle"></i>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="sidebar__nav-item">
-                            <a href="#" title="Thể loại" class="sidebar__item-link">
-                                <i class="bi bi-slack"></i>
-                                <span>Thể loại</span>
-                            </a>
-                        </li>
-                        <li class="sidebar__nav-item">
-                            <a href="#" title="Top 100" class="sidebar__item-link">
-                                <i class="bi bi-star"></i>
-                                <span>Top 100</span>
-                            </a>
-                        </li>
-                        <li class="sidebar__nav-item">
-                            <a href="#" title="MV" class="sidebar__item-link">
-                                <i class="bi bi-camera-video"></i>
-                                <span>MV</span>
-                            </a>
-                        </li>
-                    </ul>
-                    <div class="sidebar__vip">
-                        <p>Nghe nhạc không quảng cáo cùng kho nhạc VIP</p>
-                        <button class="buton-gold sidebar__vip-btn">MUA VIP</button>
-                    </div>
-                    <ul class="sidebar__subnav-menu">
-                        <li class="sidebar__menu-item menu-header">
-                            <h2>THƯ VIỆN</h2>
-                            <i class="bi bi-pencil"></i>
-                        </li>
-                        <li class="sidebar__menu-item">
-                            <a href="#" class="sidebar__menu-link">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                                <defs>
-                                <linearGradient id="0783s0j89a" x1="0%" x2="0%" y1="0%" y2="100%">
-                                <stop offset="0%" stop-color="#3CA2FF"></stop>
-                                <stop offset="100%" stop-color="#008FFF"></stop>
-                                </linearGradient>
-                                <linearGradient id="prx3tly02b" x1="21.839%" x2="21.839%" y1="43.679%" y2="100%">
-                                <stop offset="0%" stop-color="#FFF"></stop>
-                                <stop offset="100%" stop-color="#FFF" stop-opacity=".9"></stop>
-                                </linearGradient>
-                                </defs>
-                                <g fill="none" fill-rule="evenodd">
-                                <g>
-                                <g>
-                                <path
-                                    fill="url(#0783s0j89a)"
-                                    d="M.516 7.143c.812-3.928 3.31-6.115 7.207-6.776 2.88-.489 5.762-.495 8.637.014 4.012.709 6.424 3.024 7.192 7.011.594 3.082.603 6.196-.009 9.274-.821 3.9-3.384 6.309-7.266 6.967-2.88.489-5.762.495-8.637-.014-4.012-.709-6.435-3.14-7.203-7.127-.624-3.102-.564-6.235.08-9.349z"
-                                    transform="translate(-21 -433) translate(21 433)"
-                                    ></path>
-                                <path
-                                    fill="url(#prx3tly02b)"
-                                    d="M3.995 9.479c-.245.48-.245 1.11-.245 2.371v3.3c0 1.26 0 1.89.245 2.371.216.424.56.768.984.984.48.245 1.11.245 2.371.245h9.3c1.26 0 1.89 0 2.372-.245.423-.216.767-.56.983-.983.245-.482.245-1.112.245-2.372v-3.3c0-1.26 0-1.89-.245-2.371-.216-.424-.56-.768-.983-.984-.482-.245-1.112-.245-2.372-.245h-9.3c-1.26 0-1.89 0-2.371.245-.424.216-.768.56-.984.984zm8.567.571l.06.004.068.015.057.02.017.008c.556.27 1.067.623 1.516 1.046.075.07.148.142.22.217.172.18.166.464-.014.636-.18.172-.464.167-.636-.013-.061-.063-.123-.125-.187-.185-.202-.19-.42-.365-.65-.521v3.442c0 1.025-.832 1.856-1.857 1.856S9.3 15.744 9.3 14.719c0-1.025.831-1.856 1.856-1.856.35 0 .677.096.957.264V10.5c0-.249.201-.45.45-.45z"
-                                    transform="translate(-21 -433) translate(21 433)"
-                                    ></path>
-                                <path
-                                    fill="#FFF"
-                                    fill-opacity=".6"
-                                    fill-rule="nonzero"
-                                    d="M7.5 5.25c0-.414.336-.75.75-.75h7.5c.414 0 .75.336.75.75h-9z"
-                                    transform="translate(-21 -433) translate(21 433)"
-                                    ></path>
-                                <path
-                                    fill="#FFF"
-                                    fill-opacity=".9"
-                                    fill-rule="nonzero"
-                                    d="M6 6.75c0-.414.336-.75.75-.75h10.5c.414 0 .75.336.75.75H6z"
-                                    transform="translate(-21 -433) translate(21 433)"
-                                    ></path>
-                                </g>
-                                </g>
-                                </g>
-                                </svg>
-                                <span>Bài hát</span>
-                                <div class="play-btn">
-                                    <i class="bi bi-play-circle"></i>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="sidebar__menu-item">
-                            <a href="#" class="sidebar__menu-link">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                                <defs>
-                                <linearGradient id="ghd4ngt38a" x1="50%" x2="50%" y1="0%" y2="100%">
-                                <stop offset="0%" stop-color="#9FD465"></stop>
-                                <stop offset="100%" stop-color="#70B129"></stop>
-                                </linearGradient>
-                                </defs>
-                                <g fill="none" fill-rule="evenodd">
-                                <g>
-                                <g>
-                                <path
-                                    fill="url(#ghd4ngt38a)"
-                                    d="M.516 7.143c.812-3.928 3.31-6.115 7.207-6.776 2.88-.489 5.762-.495 8.637.014 4.012.709 6.424 3.024 7.192 7.011.594 3.082.603 6.196-.009 9.274-.821 3.9-3.384 6.309-7.266 6.967-2.88.489-5.762.495-8.637-.014-4.012-.709-6.435-3.14-7.203-7.127-.624-3.102-.564-6.235.08-9.349z"
-                                    transform="translate(-21 -467) translate(21 467)"
-                                    ></path>
-                                <path
-                                    stroke="#FFF"
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                    stroke-width="1.5"
-                                    d="M13.5 11.5h5m-5 3h5M6 17.5h12.5"
-                                    transform="translate(-21 -467) translate(21 467)"
-                                    ></path>
-                                <path
-                                    fill="#FFF"
-                                    d="M10.786 4.025c-.053-.016-.11-.025-.167-.025-.316 0-.572.262-.572.585v4.782c-.532-.44-1.21-.704-1.948-.704C6.387 8.663 5 10.082 5 11.831 5 13.581 6.387 15 8.099 15c1.711 0 3.099-1.419 3.099-3.169 0-.074-.003-.147-.007-.22l.001-6.04c.534.336 1.033.728 1.49 1.169.114.109.225.22.334.337.218.233.58.24.808.017.228-.223.235-.593.017-.826-.123-.131-.247-.257-.375-.38-.766-.738-1.64-1.355-2.589-1.826l-.091-.037z"
-                                    transform="translate(-21 -467) translate(21 467)"
-                                    ></path>
-                                </g>
-                                </g>
-                                </g>
-                                </svg>
-                                <span>Playlish</span>
-                            </a>
-                        </li>
-                        <li class="sidebar__menu-item">
-                            <a href="#" class="sidebar__menu-link">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                                <defs>
-                                <linearGradient id="v6mduhifwa" x1="50%" x2="50%" y1="0%" y2="100%">
-                                <stop offset="0%" stop-color="#FFD677"></stop>
-                                <stop offset="100%" stop-color="#F7AA45"></stop>
-                                </linearGradient>
-                                <linearGradient id="dkfkk30hhb" x1="21.205%" x2="21.205%" y1="43.042%" y2="100.632%">
-                                <stop offset="0%" stop-color="#FFF"></stop>
-                                <stop offset="100%" stop-color="#FFF" stop-opacity=".9"></stop>
-                                </linearGradient>
-                                </defs>
-                                <g fill="none" fill-rule="evenodd">
-                                <g>
-                                <g>
-                                <path
-                                    fill="url(#v6mduhifwa)"
-                                    d="M.516 7.143c.812-3.928 3.31-6.115 7.207-6.776 2.88-.489 5.762-.495 8.637.014 4.012.709 6.424 3.024 7.192 7.011.594 3.082.603 6.196-.009 9.274-.821 3.9-3.384 6.309-7.266 6.967-2.88.489-5.762.495-8.637-.014-4.012-.709-6.435-3.14-7.203-7.127-.624-3.102-.564-6.235.08-9.349z"
-                                    transform="translate(-21 -569) translate(21 569)"
-                                    ></path>
-                                <path
-                                    fill="url(#dkfkk30hhb)"
-                                    d="M12 3.75c-4.556 0-8.25 3.694-8.25 8.25s3.694 8.25 8.25 8.25 8.25-3.694 8.25-8.25S16.556 3.75 12 3.75zm3.805 12.388c-.13.13-.301.195-.472.195-.17 0-.341-.065-.47-.195l-3.334-3.333c-.126-.125-.196-.294-.196-.472V8c0-.369.299-.667.667-.667.368 0 .667.298.667.667v4.057l3.138 3.138c.26.261.26.682 0 .943z"
-                                    transform="translate(-21 -569) translate(21 569)"
-                                    ></path>
-                                </g>
-                                </g>
-                                </g>
-                                </svg>
-                                <span>Gần đây</span>
-                            </a>
-                        </li>
-                    </ul>
-                    <ul class="sidebar__nav-list sidebar__list-nav">
-                        <li class="sidebar__nav-item">
-                            <a href="#" title="Nhạc mới" class="sidebar__item-link">
-                                <span>Nhạc mới</span>
-                                <i class="bi bi-three-dots"></i>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="sidebar__create-playlist">
-                    <div class="sidebar__create-container hide-on-tablet-mobile">
-                        <i class="bi bi-plus-lg"></i>
-                        <h2 class="sidebar__create-title">Tạo playlist mới</h2>
-                    </div>
-                    <div class="sidebar__expand">
-                        <div class="sidebar__expand-btn btn--expand">
-                            <i class="bi bi-chevron-right"></i>
-                        </div>
-                        <div class="sidebar__expand-btn btn--shrink">
-                            <i class="bi bi-chevron-left"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
             <!-- Playlist sidebar -->
             <div class="app__playlsit-sidebar">
                 <div class="playlist__sidebar-header">
@@ -580,13 +343,6 @@
                                 </li>
                                 <li class="content__navbar-item"><span>BÀI HÁT</span></li>
                                 <li class="content__navbar-item"><span>PLAYLIST</span></li>
-                                <li class="content__navbar-item hide-on-mobile">
-                                    <span>ALBUM</span>
-                                </li>
-                                <li class="content__navbar-item"><span>MV</span></li>
-                                <li class="content__navbar-item hide-on-mobile">
-                                    <span>NGHỆ SĨ</span>
-                                </li>
                                 <li class="content__navbar-item hide-on-tablet-mobile">
                                     <span>TẢI LÊN</span>
                                 </li>
@@ -607,12 +363,9 @@
                                         </a>
                                         <h3 class="container__header-subtitle">Bài Hát</h3>
                                         <div class="container__header-actions">
-                                            <div class="button container__header-btn hide-on-mobile">
-                                                <input type="file" name="upload song" id="home__upload-input" class="container__header-input" />
-                                                <label for="home__upload-input">
-                                                    <i class="bi bi-upload"></i>
-                                                    Tải lên
-                                                </label>
+                                            <div class="button container__header-btn upload-button hide-on-mobile">
+                                                <i class="bi bi-upload"></i>
+                                                <span>Tải lên</span>
                                             </div>
                                             <div class="button container__header-btn button-primary btn--play-all">
                                                 <i class="bi bi-play-fill"></i>
@@ -706,75 +459,6 @@
                                     <div class="row no-wrap playlist--container"></div>
                                 </div>
                             </div>
-                            <!-- Album -->
-                            <div class="container__section row">
-                                <div class="col col-lg-12 col-md-12 col-12">
-                                    <div class="container__header">
-                                        <a href="#" class="container__header-title">
-                                            <h3>Album</h3>
-                                            <i class="bi bi-chevron-right"></i>
-                                        </a>
-                                        <h3 class="container__header-subtitle">Album</h3>
-                                        <div class="container__header-actions hide-on-tablet-mobile">
-                                            <div class="container__move-btn move-btn--album button--disabled prev">
-                                                <i class="bi bi-chevron-left"></i>
-                                            </div>
-                                            <div class="container__move-btn move-btn--album next">
-                                                <i class="bi bi-chevron-right"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col col-lg-12 col-md-12 col-12">
-                                    <div class="row no-wrap album--container"></div>
-                                </div>
-                            </div>
-                            <!-- MV -->
-                            <div class="container__section row">
-                                <div class="col col-lg-12 col-md-12 col-12">
-                                    <div class="container__header">
-                                        <a href="#" class="container__header-title">
-                                            <h3>MV</h3>
-                                            <i class="bi bi-chevron-right"></i>
-                                        </a>
-                                        <h3 class="container__header-subtitle">MV</h3>
-                                        <div class="container__header-actions hide-on-tablet-mobile">
-                                            <div class="container__move-btn move-btn--mv button--disabled prev">
-                                                <i class="bi bi-chevron-left"></i>
-                                            </div>
-                                            <div class="container__move-btn move-btn--mv next">
-                                                <i class="bi bi-chevron-right"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col col-lg-12 col-md-12 col-12">
-                                    <div class="row no-wrap mv--container"></div>
-                                </div>
-                            </div>
-                            <!-- Artist -->
-                            <div class="container__section row">
-                                <div class="col col-lg-12 col-md-12 col-12">
-                                    <div class="container__header">
-                                        <a href="#" class="container__header-title">
-                                            <h3>Nghệ sĩ</h3>
-                                            <i class="bi bi-chevron-right"></i>
-                                        </a>
-                                        <h3 class="container__header-subtitle">Nghệ sĩ</h3>
-                                        <div class="container__header-actions hide-on-tablet-mobile">
-                                            <div class="container__move-btn move-btn--artist button--disabled prev">
-                                                <i class="bi bi-chevron-left"></i>
-                                            </div>
-                                            <div class="container__move-btn move-btn--artist next">
-                                                <i class="bi bi-chevron-right"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col col-lg-12 col-md-12 col-12">
-                                    <div class="row no-wrap artist--container"></div>
-                                </div>
-                            </div>
                         </div>
 
                         <!-- Tap song -->
@@ -830,45 +514,6 @@
                             </div>
                         </div>
 
-                        <!-- Tap Album -->
-                        <div class="container__tab tab-album">
-                            <div class="container__section row">
-                                <div class="col col-lg-12 col-md-12 col-12">
-                                    <div class="container__header">
-                                        <a href="#" class="container__header-title">
-                                            <h3>Album</h3>
-                                        </a>
-                                        <h3 class="container__header-subtitle">Album</h3>
-                                    </div>
-                                </div>
-                                <div class="col col-lg-12 col-md-12 col-12">
-                                    <div class="row album--container"></div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Tap mv -->
-                        <div class="container__tab tab-mv">
-                            <div class="container__section row">
-                                <div class="col col-lg-12 col-md-12 col-12">
-                                    <div class="container__header">
-                                        <a href="#" class="container__header-title">
-                                            <h3>MV</h3>
-                                        </a>
-                                        <h3 class="container__header-subtitle">MV</h3>
-                                    </div>
-                                </div>
-                                <div class="col col-lg-12 col-md-12 col-12">
-                                    <div class="row mv--container"></div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Tap artist -->
-                        <div class="container__tab tab-artist">
-                            <div class="container__section row"></div>
-                        </div>
-
                         <!-- Tap upload -->
                         <div class="container__tab tab-upload">
                             <div class="container__section row">
@@ -888,6 +533,60 @@
                             </div>
                         </div>
                     </div>
+                </div>
+
+                <div id="song-form-container" class="form-container" style="display: none">
+                    <form id="song-form" enctype="multipart/form-data">
+                        <div class="form-group">
+                            <label for="song-name">Tên Bài Hát:</label>
+                            <input type="text" id="song-name" name="song-name" placeholder="Nhập tên bài hát" required />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="playlist">Chọn Playlist:</label>
+                            <select id="playlist" name="playlist" required>
+                                <option value="">Chọn Playlist</option>
+                                <option value="playlist1">Playlist 1</option>
+                                <option value="playlist2">Playlist 2</option>
+                                <option value="playlist3">Playlist 3</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="singers">Ca Sĩ:</label>
+                            <input
+                                type="text"
+                                id="singers"
+                                name="singers"
+                                placeholder="Nhập tên ca sĩ, cách nhau bằng dấu phẩy"
+                                required
+                                />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="song-duration">Độ Dài Bài Hát (phút):</label>
+                            <input
+                                type="number"
+                                id="song-duration"
+                                name="song-duration"
+                                placeholder="Nhập độ dài bài hát (phút)"
+                                required
+                                />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="song-image">Hình Ảnh Bài Hát:</label>
+                            <input type="file" id="song-image" name="song-image" accept="image/*" required />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="song-file">Tải Lên Bài Hát (MP3):</label>
+                            <input type="file" id="song-file" name="song-file" accept="audio/mp3" required />
+                        </div>
+
+                        <button type="submit" class="btn-submit">Lưu Bài Hát</button>
+                        <i id="close-form" class="fa-solid fa-xmark btn-close"></i>
+                    </form>
                 </div>
             </div>
 
@@ -1156,16 +855,6 @@
                                     <div class="info__author player__song-author"></div>
                                 </div>
                             </div>
-                            <div class="meadia__right hide-on-tablet-mobile">
-                                <div class="player__song-options">
-                                    <div class="playlist__song-btn btn--heart option-btn">
-                                        <i class="btn--icon song__icon icon--heart bi bi-heart-fill primary"></i>
-                                    </div>
-                                    <div class="player__song-btn option-btn">
-                                        <i class="bi bi-three-dots btn--icon"></i>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
                     </div>
                     <div class="player__control">
@@ -1198,12 +887,6 @@
                     </div>
                     <div class="player__options hide-on-mobile">
                         <div class="player__options-container">
-                            <div class="player__options-btn option-btn hide-on-tablet-mobile">
-                                <i class="bi bi-camera-video btn--icon"></i>
-                            </div>
-                            <div class="player__options-btn option-btn hide-on-tablet-mobile">
-                                <i class="bi bi-mic btn--icon"></i>
-                            </div>
                             <div class="player__options-btn option-btn volume">
                                 <i class="bi bi-volume-up btn--icon"></i>
                             </div>
@@ -1275,16 +958,6 @@
                                         <div class="player__song-author info__author is-oneline"></div>
                                     </div>
                                 </div>
-                                <div class="media__right hide-on-tablet-mobile">
-                                    <div class="player__song-options">
-                                        <div class="player__song-btn option-btn btn--heart">
-                                            <i class="btn--icon icon--heart bi bi-heart-fill primary"></i>
-                                        </div>
-                                        <div class="player__song-btn option-btn">
-                                            <i class="btn--icon bi bi-three-dots"></i>
-                                        </div>
-                                    </div>
-                                </div>
                             </div>
                         </div>
                         <div class="player__control">
@@ -1317,12 +990,6 @@
                         </div>
                         <div class="player__options hide-on-mobile">
                             <div class="player__options-container">
-                                <div class="player__options-btn option-btn hide-on-tablet-mobile">
-                                    <i class="bi bi-camera-video btn--icon"></i>
-                                </div>
-                                <div class="player__options-btn option-btn hide-on-tablet-mobile">
-                                    <i class="bi bi-mic btn--icon"></i>
-                                </div>
                                 <div class="player__options-btn volume option-btn">
                                     <i class="bi bi-volume-up btn--icon"></i>
                                 </div>

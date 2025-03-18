@@ -11,7 +11,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet("/song")
+@WebServlet("/songs")
 public class SongServlet extends HttpServlet {
 
     @EJB
