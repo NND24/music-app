@@ -343,9 +343,6 @@
                                 </li>
                                 <li class="content__navbar-item"><span>BÀI HÁT</span></li>
                                 <li class="content__navbar-item"><span>PLAYLIST</span></li>
-                                <li class="content__navbar-item hide-on-tablet-mobile">
-                                    <span>TẢI LÊN</span>
-                                </li>
                             </ul>
                         </div>
                     </div>
@@ -491,7 +488,7 @@
                                             <span class="playlist__header-title">BÀI HÁT</span>
                                             <span class="playlist__header-time">THỜI GIAN</span>
                                         </div>
-                                        <div class="playlist__list playlist__lis-tap-song"></div>
+                                        <div class="playlist__lis-tap-song"></div>
                                     </div>
                                 </div>
                             </div>
@@ -511,25 +508,6 @@
                             </div>
                             <div class="col col-lg-12 col-md-12 col-12">
                                 <div class="row playlist--container"></div>
-                            </div>
-                        </div>
-
-                        <!-- Tap upload -->
-                        <div class="container__tab tab-upload">
-                            <div class="container__section row">
-                                <div class="col col-lg-12 col-md-12 col-12">
-                                    <div class="container__header">
-                                        <a href="#" class="container__header-title">
-                                            <h3>Danh Sách Tải Lên</h3>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="col col-lg-12 col-md-12 col-12">
-                                    <div class="box--no-content">
-                                        <div class="no-content-image"></div>
-                                        <span class="no-content-text">Không có bài hát tải lên</span>
-                                    </div>
-                                </div>
                             </div>
                         </div>
                     </div>

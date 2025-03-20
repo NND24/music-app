@@ -13,17 +13,14 @@ public class SongService {
     @PersistenceContext(unitName = "MusicAppPU")
     private EntityManager em;
 
-    @Transactional
     public void addSong(Song song) {
         em.persist(song);
     }
 
-    @Transactional
     public void updateSong(Song song) {
         em.merge(song);
     }
 
-    @Transactional
     public void deleteSong(Integer id) {
         Song song = em.find(Song.class, id);
         if (song != null) {
@@ -37,5 +34,12 @@ public class SongService {
 
     public Song getSongById(Integer id) {
         return em.find(Song.class, id);
+    }
+
+    public List<Song> getSongsByPlaylistId(Integer playlistId) {
+        return em.createQuery(
+                "SELECT s FROM Song s JOIN PlaylistSong ps ON ps.song = s WHERE ps.playlist.id = :playlistId", Song.class)
+                .setParameter("playlistId", playlistId)
+                .getResultList();
     }
 }

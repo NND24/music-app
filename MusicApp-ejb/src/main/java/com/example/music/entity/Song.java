@@ -1,70 +1,34 @@
 package com.example.music.entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.JoinTable;
-import jakarta.persistence.ManyToMany;
-import jakarta.persistence.Table;
-import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = "Song")
-public class Song implements Serializable {
-
-    private static final long serialVersionUID = 1L;
+public class Song {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id", nullable = false)
     private Integer id;
 
-    @Column(name = "name")
     private String name;
-
-    @Column(name = "duration")
+    private String singer;
     private String duration;
-
-    @Column(name = "path")
     private String path;
-
-    @Column(name = "image")
     private String image;
 
-    @ManyToMany
-    @JoinTable(
-            name = "SongPlaylist",
-            joinColumns = @JoinColumn(name = "songId"),
-            inverseJoinColumns = @JoinColumn(name = "playlistId")
-    )
-    private List<Playlist> playlistList = new ArrayList<>();
-
-    @ManyToMany
-    @JoinTable(
-            name = "SongSinger",
-            joinColumns = @JoinColumn(name = "songId"),
-            inverseJoinColumns = @JoinColumn(name = "singerId")
-    )
-    private List<Singer> singerList = new ArrayList<>();
-
-    // Constructor mặc định
+    // Constructors
     public Song() {
     }
 
-    // Constructor đầy đủ
-    public Song(String name, String duration, String path, String image) {
+    public Song(String name, String singer, String duration, String path, String image) {
         this.name = name;
+        this.singer = singer;
         this.duration = duration;
         this.path = path;
         this.image = image;
     }
 
-    // Getter và Setter
+    // Getters và Setters
     public Integer getId() {
         return id;
     }
@@ -105,30 +69,11 @@ public class Song implements Serializable {
         this.image = image;
     }
 
-    public List<Playlist> getPlaylistList() {
-        return playlistList;
+    public String getSinger() {
+        return singer;
     }
 
-    public void setPlaylistList(List<Playlist> playlistList) {
-        this.playlistList = playlistList;
-    }
-
-    public List<Singer> getSingerList() {
-        return singerList;
-    }
-
-    public void setSingerList(List<Singer> singerList) {
-        this.singerList = singerList;
-    }
-
-    @Override
-    public String toString() {
-        return "Song{"
-                + "id=" + id
-                + ", name='" + name + '\''
-                + ", duration='" + duration + '\''
-                + ", path='" + path + '\''
-                + ", image='" + image + '\''
-                + '}';
+    public void setSinger(String singer) {
+        this.singer = singer;
     }
 }

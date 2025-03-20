@@ -801,7 +801,8 @@
     padding-left: 4px;
 }
 
-.playlist__list {
+.playlist__list,
+.playlist__lis-tap-song{
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -3077,7 +3078,7 @@
     display: block;
     margin-bottom: 5px;
     font-weight: bold;
-    color: #fff;
+    color: var(--text-color);
     font-size: 1.1rem;
 }
 
@@ -3089,7 +3090,7 @@ input[type="file"],
     padding: 8px;
     border: 1px solid #ccc;
     background: transparent;
-    color: #fff;
+    color: var(--text-color);
     border-radius: 5px;
 }
 
@@ -3098,7 +3099,7 @@ button[type="button"] {
     width: 100%;
     padding: 10px;
     background-color: var(--layout-bg);
-    color: white;
+    color: var(--text-color);
     border: none;
     border-radius: 5px;
     font-size: 16px;

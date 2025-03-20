@@ -1,44 +1,18 @@
 package com.example.music.entity;
 
-import jakarta.persistence.Basic;
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.JoinTable;
-import jakarta.persistence.ManyToMany;
-import jakarta.persistence.Table;
-import java.io.Serializable;
-import java.util.List;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = "Playlist")
-public class Playlist implements Serializable {
-
-    private static final long serialVersionUID = 1L;
+public class Playlist {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Basic(optional = false)
-    @Column(name = "id")
     private Integer id;
 
-    @Column(name = "name")
     private String name;
-
-    @Column(name = "creator")
     private String creator;
-
-    @Column(name = "image")
     private String image;
-
-    @ManyToMany
-    @JoinTable(name = "PlaylistSong",
-            joinColumns = @JoinColumn(name = "playlistId"),
-            inverseJoinColumns = @JoinColumn(name = "songId"))
-    private List<Song> songList;
 
     // Constructors
     public Playlist() {
@@ -50,7 +24,7 @@ public class Playlist implements Serializable {
         this.image = image;
     }
 
-    // Getters and Setters
+    // Getters và Setters
     public Integer getId() {
         return id;
     }
@@ -81,42 +55,5 @@ public class Playlist implements Serializable {
 
     public void setImage(String image) {
         this.image = image;
-    }
-
-    public List<Song> getSongList() {
-        return songList;
-    }
-
-    public void setSongList(List<Song> songList) {
-        this.songList = songList;
-    }
-
-    // hashCode and equals
-    @Override
-    public int hashCode() {
-        return (id != null) ? id.hashCode() : 0;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null || getClass() != obj.getClass()) {
-            return false;
-        }
-        Playlist playlist = (Playlist) obj;
-        return id != null && id.equals(playlist.id);
-    }
-
-    // toString
-    @Override
-    public String toString() {
-        return "Playlist{"
-                + "id=" + id
-                + ", name='" + name + '\''
-                + ", creator='" + creator + '\''
-                + ", image='" + image + '\''
-                + '}';
     }
 }
