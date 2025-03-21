@@ -729,6 +729,8 @@ const app = {
                                                                     .then((response) => {
                                                                         if (response.ok) {
                                                                             alert("Cập nhật bài hát thành công!");
+                                                                            songForm.reset();
+                                                                            formEditContainer.style.display = "none";
                                                                             _this.renderSong();
                                                                         }
                                                                         return response.json();
@@ -936,6 +938,8 @@ const app = {
                                                                 .then((response) => {
                                                                     if (response.ok) {
                                                                         alert("Cập nhật bài hát thành công!");
+                                                                        songForm.reset();
+                                                                        formEditContainer.style.display = "none";
                                                                         _this.renderTapSong();
                                                                     }
                                                                     return response.json();
@@ -1197,7 +1201,7 @@ const app = {
                     .then((response) => {
                         if (response.ok) {
                             alert("Bài hát đã được thêm thành công!");
-                            document.getElementById("song-form").reset();
+                            songForm.reset();
                             const activeTab = document.querySelector(".content__navbar-item.active");
                             if (activeTab && activeTab.innerText.trim() === "BÀI HÁT") {
                                 _this.renderTapSong();
@@ -1214,8 +1218,6 @@ const app = {
                     .catch((error) => {
                         console.error("Error:", error);
                     });
-
-
         });
         // Preview hình ảnh bài hát khi chọn file
         songImage.addEventListener("change", (event) => {
