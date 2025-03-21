@@ -1339,6 +1339,12 @@ const app = {
                                             if (response.ok) {
                                                 alert("Thêm bài hát vào playlist thành công!");
                                                 _this.renderAddSongToPlaylistModel(playlistId)
+                                                const activeTab = document.querySelector(".content__navbar-item.active");
+                                                if (activeTab && activeTab.innerText.trim() === "BÀI HÁT") {
+                                                    _this.renderTapSong();
+                                                } else {
+                                                    _this.renderSong();
+                                                }
                                             }
                                             response.json();
                                         })
@@ -1360,8 +1366,14 @@ const app = {
                                 })
                                         .then(response => {
                                             if (response.ok) {
-                                                alert("Xóa bài hát khỏi playlist!");
+                                                alert("Xóa bài hát khỏi playlist thành công!");
                                                 _this.renderAddSongToPlaylistModel(playlistId)
+                                                const activeTab = document.querySelector(".content__navbar-item.active");
+                                                if (activeTab && activeTab.innerText.trim() === "BÀI HÁT") {
+                                                    _this.renderTapSong();
+                                                } else {
+                                                    _this.renderSong();
+                                                }
                                             }
                                             response.json();
                                         })
