@@ -15,6 +15,8 @@ import jakarta.servlet.annotation.MultipartConfig;
 import jakarta.servlet.http.Part;
 import java.io.File;
 import java.nio.file.Paths;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.UUID;
 
 @MultipartConfig(
@@ -36,11 +38,31 @@ public class SongServlet extends HttpServlet {
         resp.setCharacterEncoding("UTF-8");
 
         String playlistIdParam = req.getParameter("playlistId");
+        String excludePlaylistIdParam = req.getParameter("excludePlaylistId");
         String songIdParam = req.getParameter("songId");
 
         Gson gson = new Gson();
 
-        if (playlistIdParam != null) {
+        if (playlistIdParam != null && excludePlaylistIdParam != null) {
+            try {
+                Integer excludePlaylistId = Integer.valueOf(excludePlaylistIdParam);
+                List<Song> songsNotInPlaylist = songService.getSongsNotInPlaylist(excludePlaylistId);
+
+                Integer playlistId = Integer.valueOf(playlistIdParam);
+                List<Song> songsInPlaylist = songService.getSongsByPlaylistId(playlistId);
+
+                Map<String, List<Song>> response = new HashMap<>();
+                response.put("songsInPlaylist", songsInPlaylist);
+                response.put("songsNotInPlaylist", songsNotInPlaylist);
+
+                String json = gson.toJson(response);
+
+                resp.getWriter().write(json);
+            } catch (NumberFormatException e) {
+                resp.setStatus(HttpServletResponse.SC_BAD_REQUEST);
+                resp.getWriter().write("{\"error\": \"Invalid playlistId\"}");
+            }
+        } else if (playlistIdParam != null) {
             try {
                 Integer playlistId = Integer.valueOf(playlistIdParam);
                 List<Song> songs = songService.getSongsByPlaylistId(playlistId);

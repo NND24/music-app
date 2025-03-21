@@ -25,7 +25,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet" />
         <!-- Link CSS -->
         <link rel="stylesheet" href="./assets/css/base.css?version=2" />
-        <link rel="stylesheet" href="./assets/css/main.css?version=2" />
+        <link rel="stylesheet" href="./assets/css/main.css?version=3" />
         <link rel="stylesheet" href="./assets/css/responsive.css" />
     </head>
     <body>
@@ -644,6 +644,8 @@
                     <i class="fa-solid fa-xmark btn-close close-form"></i>
                 </form>
             </div>
+
+            <div id="add-song-to-playlist-container"></div>
         </div>
 
         <!-- Player -->

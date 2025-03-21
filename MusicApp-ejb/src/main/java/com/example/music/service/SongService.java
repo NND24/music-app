@@ -4,7 +4,6 @@ import com.example.music.entity.Song;
 import jakarta.ejb.Stateless;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
-import jakarta.transaction.Transactional;
 import java.util.List;
 
 @Stateless
@@ -39,6 +38,15 @@ public class SongService {
     public List<Song> getSongsByPlaylistId(Integer playlistId) {
         return em.createQuery(
                 "SELECT s FROM Song s JOIN PlaylistSong ps ON ps.song = s WHERE ps.playlist.id = :playlistId", Song.class)
+                .setParameter("playlistId", playlistId)
+                .getResultList();
+    }
+
+    public List<Song> getSongsNotInPlaylist(int playlistId) {
+        return em.createQuery(
+                "SELECT s FROM Song s WHERE s.id NOT IN ("
+                + "SELECT ps.song.id FROM PlaylistSong ps WHERE ps.playlist.id = :playlistId"
+                + ")", Song.class)
                 .setParameter("playlistId", playlistId)
                 .getResultList();
     }

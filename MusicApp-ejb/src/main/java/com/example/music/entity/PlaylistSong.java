@@ -24,4 +24,37 @@ public class PlaylistSong implements Serializable {
     @ManyToOne
     @JoinColumn(name = "playlistId")
     private Playlist playlist;
+
+    public PlaylistSong() {
+    }
+
+    public PlaylistSong(Song song, Playlist playlist) {
+        this.song = song;
+        this.playlist = playlist;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Song getSong() {
+        return song;
+    }
+
+    public void setSong(Song song) {
+        this.song = song;
+    }
+
+    public Playlist getPlaylist() {
+        return playlist;
+    }
+
+    public void setPlaylist(Playlist playlist) {
+        this.playlist = playlist;
+    }
+
 }

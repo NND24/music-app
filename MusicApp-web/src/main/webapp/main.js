@@ -31,6 +31,7 @@ const songTitles = Array.from($$(".player__song-title"));
 const durationTimes = Array.from($$(".durationtime"));
 const playlistScrollBtns = $$(".container__move-btn.move-btn--playlist");
 const themeContainer = $(".theme__container");
+const addSongToPlaylistContainer = $("#add-song-to-playlist-container");
 const modalTheme = $(".modal-theme");
 const navThemeBtn = $(".header__nav-btn.nav-btn--theme");
 const closeModalBtn = $(".modal__close-btn");
@@ -1033,7 +1034,7 @@ const app = {
                                 <div class="playlist-menu options-menu" style="display: none;">
                                     <ul>
                                         <li class="edit-playlist">Chỉnh sửa</li>
-                                        <li class="add-playlist">Thêm bài hát</li>
+                                        <li class="add-song-to-playlist">Thêm bài hát</li>
                                         <li class="delete-playlist">Xóa</li>
                                     </ul>
                                 </div>
@@ -1069,7 +1070,7 @@ const app = {
                                 // Add event listeners for edit and delete actions
                                 const editBtn = optionsMenu.querySelector(".edit-playlist");
                                 const deleteBtn = optionsMenu.querySelector(".delete-playlist");
-                                const addSongBtn = optionsMenu.querySelector(".add-song");
+                                const addSongToPlaylistBtn = optionsMenu.querySelector(".add-song-to-playlist");
                                 editBtn.addEventListener("click", (e) => {
                                     e.preventDefault();
                                     allOptionMenus.forEach((menu) => {
@@ -1089,7 +1090,6 @@ const app = {
                                                     const playlistEditName = $("#playlist-form-edit-container .playlist-name");
                                                     const playlistEditImage = $("#playlist-form-edit-container .playlist-image");
                                                     const playlistEditImagePreview = $("#playlist-form-edit-container .current-playlist-image");
-
                                                     playlistEditName.value = playlistData.name;
                                                     // Hiển thị ảnh hiện tại nếu có
                                                     if (playlistData.image) {
@@ -1132,6 +1132,12 @@ const app = {
                                                                         playlistForm.reset();
                                                                         formEditContainer.style.display = "none";
                                                                         _this.renderPlaylist()();
+                                                                        const activeTab = document.querySelector(".content__navbar-item.active");
+                                                                        if (activeTab && activeTab.innerText.trim() === "BÀI HÁT") {
+                                                                            _this.renderTapSong();
+                                                                        } else {
+                                                                            _this.renderSong();
+                                                                        }
                                                                     }
                                                                     return response.json();
                                                                 })
@@ -1163,6 +1169,9 @@ const app = {
                                     }
                                     ;
                                 });
+                                addSongToPlaylistBtn.addEventListener("click", (e) => {
+                                    _this.renderAddSongToPlaylistModel(playlistId);
+                                });
                                 deleteBtn.addEventListener("click", (e) => {
                                     e.preventDefault();
                                     allOptionMenus.forEach((menu) => {
@@ -1175,8 +1184,13 @@ const app = {
                                                 .then(response => {
                                                     if (response.ok) {
                                                         alert("Playlist đã được xóa thành công!");
-                                                        const activeTab = document.querySelector(".content__navbar-item.active");
                                                         _this.renderPlaylist()
+                                                        const activeTab = document.querySelector(".content__navbar-item.active");
+                                                        if (activeTab && activeTab.innerText.trim() === "BÀI HÁT") {
+                                                            _this.renderTapSong();
+                                                        } else {
+                                                            _this.renderSong();
+                                                        }
                                                     }
                                                     return response.json();
                                                 })
@@ -1243,6 +1257,125 @@ const app = {
 
         `;
         themeContainer.innerHTML = themeContainerHTML;
+    },
+    renderAddSongToPlaylistModel(playlistId) {
+        const _this = this;
+        try {
+            fetch(`/musicapp/song?playlistId=${playlistId}&excludePlaylistId=${playlistId}`, {
+                method: "GET",
+            })
+                    .then(response => {
+                        return response.json();
+                    })
+                    .then(data => {
+                        const {songsInPlaylist, songsNotInPlaylist} = data;
+                        const addSongToPlaylistContainerHTML = `
+                <div class="add-song form-container">
+                    <h3>Tất cả bài hát</h3>
+                <div class="not-in-playlist-container">
+                    ${songsNotInPlaylist.map((song, index) => `
+                        <div class="playlist__list-song">
+                            <div class="playlist__song-info">
+                                <div class="playlist__song-thumb">
+                                    <img src="${song.image}" />
+                                </div>
+                                <div class="playlist__song-body">
+                                    <span class="playlist__song-title">${song.name}</span>
+                                    <p class="playlist__song-author">${song.singer}</p>
+                                </div>
+                            </div>
+                            <span class="playlist__song-time"></span>
+                            <div class="playlist__song-option">
+                                <div class="playlist__song-btn option-btn hide-on-tablet" data-id="${song.id}">
+                                    <i class="btn--icon bi bi-plus"></i>
+                                    <span>Thêm vào playlist</span>
+                                </div>
+                            </div>
+                        </div>
+                    `).join('')}
+                </div>
+
+                <h3>Các bài hát trong playlist</h3>
+                <div class="in-playlist-container">
+                ${songsInPlaylist.map((song, index) => `
+                        <div class="playlist__list-song">
+                            <div class="playlist__song-info">
+                                <div class="playlist__song-thumb">
+                                    <img src="${song.image}" />
+                                </div>
+                                <div class="playlist__song-body">
+                                    <span class="playlist__song-title">${song.name}</span>
+                                    <p class="playlist__song-author">${song.singer}</p>
+                                </div>
+                            </div>
+                            <span class="playlist__song-time"></span>
+                            <div class="playlist__song-option">
+                                <div class="playlist__song-btn option-btn hide-on-tablet" data-id="${song.id}">
+                                    <i class="btn--icon bi bi-trash-fill"></i>
+                                    <span>Xóa khỏi playlist</span>
+                                </div>
+                            </div>
+                        </div>
+                    `).join('')}
+                    </div>
+                    <i class="fa-solid fa-xmark btn-close close-form"></i>
+                </div>
+            `;
+                        addSongToPlaylistContainer.innerHTML = addSongToPlaylistContainerHTML;
+                        document.querySelector(".add-song.form-container .close-form").addEventListener("click", function () {
+                            addSongToPlaylistContainer.innerHTML = ""; // Xóa nội dung
+                        });
+
+                        document.querySelectorAll(".not-in-playlist-container .playlist__song-btn").forEach(btn => {
+                            btn.addEventListener("click", function () {
+                                const songId = this.dataset.id;
+                                fetch(`/musicapp/playlistsong?playlistId=${playlistId}&songId=${songId}`, {
+                                    method: "POST",
+                                    headers: {
+                                        "Content-Type": "application/json",
+                                    },
+                                })
+                                        .then(response => {
+                                            if (response.ok) {
+                                                alert("Thêm bài hát vào playlist thành công!");
+                                                _this.renderAddSongToPlaylistModel(playlistId)
+                                            }
+                                            response.json();
+                                        })
+                                        .then(data => {
+                                        })
+                                        .catch(error => console.log("Lỗi kết nối: " + error.message));
+                            });
+                        });
+
+                        // Gắn sự kiện cho các nút xóa bài hát
+                        document.querySelectorAll(".in-playlist-container .playlist__song-btn").forEach(btn => {
+                            btn.addEventListener("click", function () {
+                                const songId = this.dataset.id;
+                                fetch(`/musicapp/playlistsong?playlistId=${playlistId}&songId=${songId}`, {
+                                    method: "DELETE",
+                                    headers: {
+                                        "Content-Type": "application/json",
+                                    },
+                                })
+                                        .then(response => {
+                                            if (response.ok) {
+                                                alert("Xóa bài hát khỏi playlist!");
+                                                _this.renderAddSongToPlaylistModel(playlistId)
+                                            }
+                                            response.json();
+                                        })
+                                        .then(data => {
+
+                                        })
+                                        .catch(error => console.log("Lỗi kết nối: " + error.message));
+                            });
+                        });
+                    });
+        } catch (error) {
+            alert("Lỗi khi lấy dữ liệu bài hát: " + error.message);
+        }
+        ;
     },
     defineProperties: function () {
         const _this = this;

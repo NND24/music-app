@@ -3165,3 +3165,55 @@ button.close-form:hover {
 .fa-xmark {
     color: var(--text-color);
 }
+
+.add-song h3 {
+    margin-top: 15px;
+    color: var(--text-color);
+}
+
+.in-playlist-container,
+.not-in-playlist-container {
+    overflow-x: hidden;
+    overflow-y: scroll;
+    max-height: 185px;
+}
+
+.in-playlist-container::-webkit-scrollbar,
+.not-in-playlist-container::-webkit-scrollbar{
+    display: none;
+}
+
+.in-playlist-container:hover::-webkit-scrollbar,
+.not-in-playlist-container:hover::-webkit-scrollbar{
+    display: block;
+    width: 0.1px;
+}
+
+/* Track */
+.in-playlist-container::-webkit-scrollbar-track,
+.not-in-playlist-container::-webkit-scrollbar-track{
+    border-radius: 10px;
+    background: transparent;
+}
+
+/* Handle */
+.in-playlist-container::-webkit-scrollbar-thumb,
+.not-in-playlist-container::-webkit-scrollbar-thumb{
+    border-radius: 10px;
+    background: #888;
+}
+
+/* Handle on hover */
+.in-playlist-container::-webkit-scrollbar-thumb:hover,
+.not-in-playlist-container::-webkit-scrollbar-thumb:hover{
+    background: #555;
+}
+
+.in-playlist-container .playlist__song-btn,
+.not-in-playlist-container .playlist__song-btn {
+    width: 130px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
