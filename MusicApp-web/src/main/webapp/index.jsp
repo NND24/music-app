@@ -468,11 +468,10 @@
                                         </a>
                                         <h3 class="container__header-subtitle">Bài Hát</h3>
                                         <div class="container__header-actions">
-                                            <div class="button container__header-btn hide-on-mobile">
-                                                <input type="file" name="upload song" id="home__upload-input" class="container__header-input" />
+                                            <div class="button container__header-btn upload-button hide-on-mobile">
                                                 <label for="home__upload-input">
                                                     <i class="bi bi-upload"></i>
-                                                    Tải lên
+                                                    Tải lên bài hát
                                                 </label>
                                             </div>
                                             <div class="button container__header-btn button-primary btn--play-all">
@@ -503,6 +502,14 @@
                                             <h3>Playlist</h3>
                                         </a>
                                         <h3 class="container__header-subtitle">Playlist</h3>
+                                        <div class="container__header-actions">
+                                            <div class="button upload-playlist-button container__header-btn hide-on-mobile">
+                                                <label for="home__upload-input">
+                                                    <i class="bi bi-plus"></i>
+                                                    Thêm playlist
+                                                </label>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -584,269 +591,178 @@
                 </div>
             </div>
 
-            <!-- Tap explore -->
-            <div class="app__container tab--explore">
-                <div class="app__container-content">
-                    <div class="explore__container">
-                        <!-- Slide -->
-                        <div class="row container__section">
-                            <div class="col col-lg-12 col-md-12 col-12">
-                                <div class="row explore__slide--container"></div>
-                            </div>
-                        </div>
-
-                        <!-- Playlists -->
-                        <div class="row container__section normal-playlist--section"></div>
-                        <div class="row container__section normal-playlist--section"></div>
-                        <div class="row container__section normal-playlist--section mt-30"></div>
-                        <div class="row container__section special-playlist--section"></div>
-
-                        <!-- Radio -->
-                        <div class="row container__section">
-                            <div class="col col-lg-12 col-md-12 col-12">
-                                <div class="container__header">
-                                    <a href="#" class="container__header-title">
-                                        <h3>Radio Nổi Bật</h3>
-                                        <i class="bi bi-chevron-right"></i>
-                                    </a>
-                                    <h3 class="container__header-subtitle">Radio Nổi Bật</h3>
-                                    <div class="container__header-actions hide-on-tablet-mobile">
-                                        <div class="container__move-btn move-btn--radio button--disabled">
-                                            <i class="bi bi-chevron-left container__move-btn-icon"></i>
-                                        </div>
-                                        <div class="container__move-btn move-btn--radio">
-                                            <i class="bi bi-chevron-right container__move-btn-icon"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col col-lg-12 col-md-12 col-12">
-                                <div class="row no-wrap radio--container"></div>
-                            </div>
-                        </div>
-
-                        <!-- Playlists -->
-                        <div class="row container__section normal-playlist--section mt-30"></div>
-                        <div class="row container__section normal-playlist--section"></div>
-
-                        <!-- Label -->
-                        <div class="row container__section mt-30">
-                            <div class="col col-lg-12 col-md-12 col-12">
-                                <div class="row no-wrap label--container"></div>
-                            </div>
-                        </div>
-
-                        <!-- Singer slide -->
-                        <div class="row container__section">
-                            <div class="col col-lg-12 col-md-12 col-12 singer__slide-row">
-                                <div class="row no-wrap singer-slide--container"></div>
-                            </div>
-                        </div>
-
-                        <!-- Playlist -->
-                        <div class="row container__section normal-playlist--section mt-30"></div>
-
-                        <!-- Event -->
-                        <div class="row container__section mt-30">
-                            <div class="col col-lg-12 col-md-12 col-12">
-                                <div class="container__header">
-                                    <a href="#" class="container__header-title">
-                                        <h3>Sự Kiện</h3>
-                                    </a>
-                                    <h3 class="container__header-subtitle">Sự Kiện</h3>
-                                </div>
-                            </div>
-                            <div class="col col-lg-12 col-md-12 col-12">
-                                <div class="row no-wrap event--container"></div>
-                            </div>
-                        </div>
-
-                        <!-- Playlist -->
-                        <div class="row container__section special-playlist--section"></div>
-
-                        <!-- New playlist -->
-                        <div class="row container__section">
-                            <div class="col col-lg-12 col-md-12 col-12">
-                                <div class="container__header">
-                                    <a href="#" class="container__header-title">
-                                        <h3>Mới Phát Hành</h3>
-                                    </a>
-                                    <h3 class="container__header-subtitle">Mới Phát Hành</h3>
-                                    <div class="container__header-actions new-playlist--move hide-on-tablet-mobile">
-                                        <div class="container__move-btn move-btn--new-playlist btn--prev">
-                                            <i class="bi bi-chevron-left container__move-btn-icon"></i>
-                                        </div>
-                                        <div class="container__move-btn move-btn--new-playlist btn--next">
-                                            <i class="bi bi-chevron-right container__move-btn-icon"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col col-lg-12 col-md-12 col-12">
-                                <div class="row no-wrap new-playlist--container"></div>
-                            </div>
-                        </div>
-                        <div class="row container__section normal-playlist--section mt-30"></div>
-
-                        <!-- Favorite artist -->
-                        <div class="row container__section mt-30">
-                            <div class="col col-lg-12 col-md-12 col-12">
-                                <div class="container__header">
-                                    <a href="#" class="container__header-title">
-                                        <h3>Nghệ Sĩ Yêu Thích</h3>
-                                    </a>
-                                    <h3 class="container__header-subtitle">Nghệ Sĩ Yêu Thích</h3>
-                                    <div class="container__header-actions fav-artist--move hide-on-tablet-mobile">
-                                        <div class="container__move-btn move-btn--fav-artist btn--prev">
-                                            <i class="bi bi-chevron-left container__move-btn-icon"></i>
-                                        </div>
-                                        <div class="container__move-btn move-btn--fav-artist btn--next">
-                                            <i class="bi bi-chevron-right container__move-btn-icon"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col col-lg-12 col-md-12 col-12">
-                                <div class="row no-wrap fav-artist--container"></div>
-                            </div>
-                        </div>
+            <div id="playlist-form-container" class="form-container" style="display: none">
+                <form class="song-form" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label for="song-name">Tên playlist:</label>
+                        <input type="text" class="playlist-name" name="playlist-name" placeholder="Nhập tên playlist" required />
                     </div>
 
-                    <!-- Brand -->
-                    <footer class="container__footer">
-                        <div class="col col-lg-12 col-md-12 col-12 container__footer-header">
-                            <span>Đối Tác Âm Nhạc</span>
-                        </div>
-                        <div class="col col-lg-12 col-md-12 col-12 container__footer-brand">
-                            <div class="row brand--container"></div>
-                        </div>
-                    </footer>
-                </div>
-            </div>
-
-            <!-- Tap charts -->
-            <div class="app__container tab--charts">
-                <div class="app__container-content">
-                    <div class="charts__container">
-                        <div class="chart__container-header">
-                            <h3 class="chart__header-name">#zingchart</h3>
-                            <div class="chart__header-btn">
-                                <i class="bi bi-play-fill"></i>
-                            </div>
-                        </div>
-                        <div class="row chart--container">]</div>
-                        <div class="charts__expand">
-                            <button class="button charts__expand-btn">Xem top 100</button>
-                        </div>
+                    <div class="form-group">
+                        <label for="song-image">Hình Ảnh Playlist:</label>
+                        <img class="current-playlist-image" src="" alt="Ảnh playlist" style="max-width: 100px; display: none;" />
+                        <input type="file" class="playlist-image" name="playlist-image" accept="image/*" required />
                     </div>
-                </div>
+
+                    <button type="submit" class="btn-submit">Lưu Playlist</button>
+                    <i class="fa-solid fa-xmark btn-close close-form"></i>
+                </form>
             </div>
 
-            <!-- Tab radio -->
-            <div class="app__container tab--radio">
-                <div class="app__container-content">
-                    <div class="radio__container">
-                        <!-- Radio list -->
-                        <div class="row container__section">
-                            <div class="col col-lg-12 col-md-12 col-12">
-                                <div class="container__header">
-                                    <a href="#" class="container__header-title">
-                                        <h3>Radio Nổi Bật</h3>
-                                        <i class="bi bi-chevron-right"></i>
-                                    </a>
-                                    <h3 class="container__header-subtitle">Radio Nổi Bật</h3>
-                                    <div class="container__header-actions hide-on-tablet-mobile">
-                                        <div class="container__move-btn move-btn--radio button--disabled">
-                                            <i class="bi bi-chevron-left container__move-btn-icon"></i>
-                                        </div>
-                                        <div class="container__move-btn move-btn--radio">
-                                            <i class="bi bi-chevron-right container__move-btn-icon"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col col-lg-12 col-md-12 col-12">
-                                <div class="row no-wrap radio--container"></div>
-                            </div>
-                        </div>
-
-                        <!-- Playlist -->
-                        <div class="row container__section special-playlist--section mt-30"></div>
-                        <div class="row container__section special-playlist--section mt-30"></div>
-                        <div class="row container__section special-playlist--section mt-30"></div>
-
-                        <div class="row container__section normal-playlist--section mt-30"></div>
+            <div id="playlist-form-container" class="form-container" style="display: none">
+                <form class="song-form" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label for="song-name">Tên playlist:</label>
+                        <input type="text" class="playlist-name" name="playlist-name" placeholder="Nhập tên playlist" required />
                     </div>
-                </div>
+
+                    <div class="form-group">
+                        <label for="song-image">Hình Ảnh Playlist:</label>
+                        <img class="current-playlist-image" src="" alt="Ảnh playlist" style="max-width: 100px; display: none;" />
+                        <input type="file" class="playlist-image" name="playlist-image" accept="image/*" required />
+                    </div>
+
+                    <button type="submit" class="btn-submit">Lưu Playlist</button>
+                    <i class="fa-solid fa-xmark btn-close close-form"></i>
+                </form>
             </div>
 
-            <!-- Tap following -->
-            <div class="app__container tab--following">
-                <div class="app__container-content">
-                    <div class="following__container">
-                        <!-- Following navbar -->
-                        <div class="following__navbar">
-                            <div class="following__navbar-container">
-                                <ul class="following__navbar-menu">
-                                    <li class="following__navbar-item active hide-on-tablet">
-                                        <span>Việt Nam</span>
-                                    </li>
-                                    <li class="following__navbar-item">
-                                        <span>US-UK</span>
-                                    </li>
-                                    <li class="following__navbar-item">
-                                        <span>K-Pop</span>
-                                    </li>
-                                    <li class="following__navbar-item">
-                                        <span>Hoa Ngữ</span>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
+            <div id="playlist-form-edit-container" class="form-container" style="display: none">
+                <form class="song-form" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label for="song-name">Tên playlist:</label>
+                        <input type="text" class="playlist-name" name="playlist-name" placeholder="Nhập tên playlist" required />
+                    </div>
 
-                        <!-- Singer slide -->
-                        <div class="row container__section mb-50">
-                            <div class="col col-lg-12 col-md-12 col-12 singer__slide-row">
-                                <div class="row no-wrap singer-slide--container">
-                                    <div class="singer__slide-move hide-on-mobile">
-                                        <div class="slide__move-btn btn--prev">
-                                            <i class="bi bi-chevron-left"></i>
-                                        </div>
-                                        <div class="slide__move-btn btn--next">
-                                            <i class="bi bi-chevron-right"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="form-group">
+                        <label for="song-image">Hình Ảnh Playlist:</label>
+                        <img class="current-playlist-image" src="" alt="Ảnh playlist" style="max-width: 100px; display: none;" />
+                        <input type="file" class="playlist-image" name="playlist-image" accept="image/*" />
+                    </div>
 
-                        <!-- Story post -->
-                        <div class="row container__section">
-                            <div class="col col-lg-12 col-md-12 col-12">
-                                <div class="row">
-                                    <div class="col col-lg-6 col-md-6 col-12 story--container"></div>
-                                    <div class="col col-lg-6 col-md-6 col-12 story--container"></div>
+                    <button type="submit" class="btn-submit">Cập nhật Playlist</button>
+                    <i class="fa-solid fa-xmark btn-close close-form"></i>
+                </form>
+            </div>
+        </div>
+
+        <!-- Player -->
+        <div class="player">
+            <div class="player__container">
+                <div class="player__container-song">
+                    <div class="player__song-info media">
+                        <div class="media__left">
+                            <div class="player__song-thump"></div>
+                        </div>
+                        <div class="media__content">
+                            <div class="meadia__info">
+                                <div class="info__title">
+                                    <h3 class="title__item player__song-title is-oneline"></h3>
                                 </div>
+                                <div class="info__author player__song-author"></div>
                             </div>
                         </div>
                     </div>
                 </div>
+                <div class="player__control">
+                    <div class="player__control-btn">
+                        <div class="control-btn btn-random">
+                            <i class="bi bi-shuffle"></i>
+                        </div>
+                        <div class="control-btn btn-prev">
+                            <i class="bi bi-skip-start-fill"></i>
+                        </div>
+                        <div class="control-btn btn-toggle-play btn--play-song">
+                            <i class="bi bi-play-circle icon-play"></i>
+                            <i class="bi bi-pause-circle icon-pause"></i>
+                        </div>
+                        <div class="control-btn btn-next">
+                            <i class="bi bi-skip-end-fill"></i>
+                        </div>
+                        <div class="control-btn btn-repeat">
+                            <i class="bi bi-arrow-repeat"></i>
+                        </div>
+                    </div>
+                    <div class="progress-block hide-on-mobile">
+                        <span class="tracktime">00:00</span>
+                        <input id="progress--main" class="progress" type="range" value="0" step="1" min="0" max="100" />
+                        <div class="progress__track song--track">
+                            <div class="progress__track-update"></div>
+                        </div>
+                        <span class="durationtime">00:00</span>
+                    </div>
+                </div>
+                <div class="player__options hide-on-mobile">
+                    <div class="player__options-container">
+                        <div class="player__options-btn option-btn volume">
+                            <i class="bi bi-volume-up btn--icon"></i>
+                        </div>
+                        <div class="player__volume-progress">
+                            <input type="range" class="volume__range" value="100" step="1" min="0" max="100" />
+                            <div class="progress__track volume--track">
+                                <div class="progress__track-update"></div>
+                            </div>
+                        </div>
+                        <div class="player__list-icon">
+                            <i class="bi bi-music-note-list"></i>
+                        </div>
+                    </div>
+                </div>
+                <audio src="" id="audio"></audio>
             </div>
 
-            <!-- Player -->
-            <div class="player">
-                <div class="player__container">
-                    <div class="player__container-song">
+            <div class="player__popup" style="background-image: none">
+                <div class="player__popup-header">
+                    <div class="player__popup-logo"></div>
+                    <div class="player__popup-container">
+                        <ul class="player__popup-menu">
+                            <li class="player__popup-item active">
+                                <a href="#">Danh Sách Phát</a>
+                            </li>
+                            <li class="player__popup-item">
+                                <a href="#">Karaoke</a>
+                            </li>
+                            <li class="player__popup-item hide-on-mobile">
+                                <a href="#">Lời Bài Hát</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="player__popup-action">
+                        <ul class="popup__action-menu">
+                            <li class="popup__action-btn hide-on-tablet-mobile">
+                                <i class="bi bi-arrows-angle-expand popup__action-btn-icon"></i>
+                            </li>
+                            <li class="popup__action-btn hide-on-tablet-mobile">
+                                <i class="bi bi-gear popup__action-btn-icon"></i>
+                            </li>
+                            <li class="popup__action-btn btn--pop-down">
+                                <i class="bi bi-chevron-down popup__action-btn-icon"></i>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="player__popup-cd-display player__song-thump">
+                    <img src="" class="player__popup-cd-img" alt="" />
+                </div>
+                <div class="player__popup-cd-info">
+                    <h4>Now playing</h4>
+                    <h2 class="is-twoline player__song-title"></h2>
+                    <h3 class="player__song-author"></h3>
+                </div>
+                <div class="player__popup-footer" style="background-image: none">
+                    <div class="player__container-song hide-on-mobile">
                         <div class="player__song-info media">
                             <div class="media__left">
                                 <div class="player__song-thump"></div>
                             </div>
                             <div class="media__content">
-                                <div class="meadia__info">
-                                    <div class="info__title">
-                                        <h3 class="title__item player__song-title is-oneline"></h3>
+                                <div class="player__song-body media__info">
+                                    <div class="player__song-title info__title" style="width: 158px">
+                                        <div class="player__title-animate">
+                                            <div class="title__item"></div>
+                                        </div>
                                     </div>
-                                    <div class="info__author player__song-author"></div>
+                                    <div class="player__song-author info__author is-oneline"></div>
                                 </div>
                             </div>
                         </div>
@@ -876,149 +792,46 @@
                             <div class="progress__track song--track">
                                 <div class="progress__track-update"></div>
                             </div>
-                            <span class="durationtime">00:00</span>
+                            <span class="durationtime">04:13</span>
                         </div>
                     </div>
                     <div class="player__options hide-on-mobile">
                         <div class="player__options-container">
-                            <div class="player__options-btn option-btn volume">
+                            <div class="player__options-btn volume option-btn">
                                 <i class="bi bi-volume-up btn--icon"></i>
                             </div>
                             <div class="player__volume-progress">
                                 <input type="range" class="volume__range" value="100" step="1" min="0" max="100" />
                                 <div class="progress__track volume--track">
-                                    <div class="progress__track-update"></div>
+                                    <div class="progress__track-update" style="width: 67%"></div>
                                 </div>
+                                <span class="volume__background"></span>
                             </div>
                             <div class="player__list-icon">
                                 <i class="bi bi-music-note-list"></i>
                             </div>
                         </div>
                     </div>
-                    <audio src="" id="audio"></audio>
-                </div>
-
-                <div class="player__popup" style="background-image: none">
-                    <div class="player__popup-header">
-                        <div class="player__popup-logo"></div>
-                        <div class="player__popup-container">
-                            <ul class="player__popup-menu">
-                                <li class="player__popup-item active">
-                                    <a href="#">Danh Sách Phát</a>
-                                </li>
-                                <li class="player__popup-item">
-                                    <a href="#">Karaoke</a>
-                                </li>
-                                <li class="player__popup-item hide-on-mobile">
-                                    <a href="#">Lời Bài Hát</a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="player__popup-action">
-                            <ul class="popup__action-menu">
-                                <li class="popup__action-btn hide-on-tablet-mobile">
-                                    <i class="bi bi-arrows-angle-expand popup__action-btn-icon"></i>
-                                </li>
-                                <li class="popup__action-btn hide-on-tablet-mobile">
-                                    <i class="bi bi-gear popup__action-btn-icon"></i>
-                                </li>
-                                <li class="popup__action-btn btn--pop-down">
-                                    <i class="bi bi-chevron-down popup__action-btn-icon"></i>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="player__popup-cd-display player__song-thump">
-                        <img src="" class="player__popup-cd-img" alt="" />
-                    </div>
-                    <div class="player__popup-cd-info">
-                        <h4>Now playing</h4>
-                        <h2 class="is-twoline player__song-title"></h2>
-                        <h3 class="player__song-author"></h3>
-                    </div>
-                    <div class="player__popup-footer" style="background-image: none">
-                        <div class="player__container-song hide-on-mobile">
-                            <div class="player__song-info media">
-                                <div class="media__left">
-                                    <div class="player__song-thump"></div>
-                                </div>
-                                <div class="media__content">
-                                    <div class="player__song-body media__info">
-                                        <div class="player__song-title info__title" style="width: 158px">
-                                            <div class="player__title-animate">
-                                                <div class="title__item"></div>
-                                            </div>
-                                        </div>
-                                        <div class="player__song-author info__author is-oneline"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="player__control">
-                            <div class="player__control-btn">
-                                <div class="control-btn btn-random">
-                                    <i class="bi bi-shuffle"></i>
-                                </div>
-                                <div class="control-btn btn-prev">
-                                    <i class="bi bi-skip-start-fill"></i>
-                                </div>
-                                <div class="control-btn btn-toggle-play btn--play-song">
-                                    <i class="bi bi-play-circle icon-play"></i>
-                                    <i class="bi bi-pause-circle icon-pause"></i>
-                                </div>
-                                <div class="control-btn btn-next">
-                                    <i class="bi bi-skip-end-fill"></i>
-                                </div>
-                                <div class="control-btn btn-repeat">
-                                    <i class="bi bi-arrow-repeat"></i>
-                                </div>
-                            </div>
-                            <div class="progress-block hide-on-mobile">
-                                <span class="tracktime">00:00</span>
-                                <input id="progress--main" class="progress" type="range" value="0" step="1" min="0" max="100" />
-                                <div class="progress__track song--track">
-                                    <div class="progress__track-update"></div>
-                                </div>
-                                <span class="durationtime">04:13</span>
-                            </div>
-                        </div>
-                        <div class="player__options hide-on-mobile">
-                            <div class="player__options-container">
-                                <div class="player__options-btn volume option-btn">
-                                    <i class="bi bi-volume-up btn--icon"></i>
-                                </div>
-                                <div class="player__volume-progress">
-                                    <input type="range" class="volume__range" value="100" step="1" min="0" max="100" />
-                                    <div class="progress__track volume--track">
-                                        <div class="progress__track-update" style="width: 67%"></div>
-                                    </div>
-                                    <span class="volume__background"></span>
-                                </div>
-                                <div class="player__list-icon">
-                                    <i class="bi bi-music-note-list"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
+    </div>
 
-        <!-- Theme -->
-        <div class="modal-theme grid">
-            <div class="modal-container">
-                <div class="modal__close-btn">
-                    <i class="bi bi-x-lg close close__btn-icon"></i>
-                </div>
-                <div class="theme__header">
-                    <h3 class="theme__header-title">Giao Diện</h3>
-                </div>
-                <div class="theme__content">
-                    <div class="grid theme__container"></div>
-                </div>
+    <!-- Theme -->
+    <div class="modal-theme grid">
+        <div class="modal-container">
+            <div class="modal__close-btn">
+                <i class="bi bi-x-lg close close__btn-icon"></i>
+            </div>
+            <div class="theme__header">
+                <h3 class="theme__header-title">Giao Diện</h3>
+            </div>
+            <div class="theme__content">
+                <div class="grid theme__container"></div>
             </div>
         </div>
+    </div>
 
-        <script src="main.js"></script>
-    </body>
+    <script src="main.js"></script>
+</body>
 </html>

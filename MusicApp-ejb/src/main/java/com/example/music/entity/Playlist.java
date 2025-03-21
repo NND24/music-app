@@ -11,16 +11,14 @@ public class Playlist {
     private Integer id;
 
     private String name;
-    private String creator;
     private String image;
 
     // Constructors
     public Playlist() {
     }
 
-    public Playlist(String name, String creator, String image) {
+    public Playlist(String name, String image) {
         this.name = name;
-        this.creator = creator;
         this.image = image;
     }
 
@@ -39,14 +37,6 @@ public class Playlist {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public String getCreator() {
-        return creator;
-    }
-
-    public void setCreator(String creator) {
-        this.creator = creator;
     }
 
     public String getImage() {

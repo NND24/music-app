@@ -53,7 +53,6 @@ const volumeIcons = Array.from($$(".volume .btn--icon"));
 const songLists = Array.from($$(".playlist__list"));
 const tapsongLists = Array.from($$(".playlist__lis-tap-song"));
 const playlistLists = Array.from($$(".playlist--container"));
-
 const app = {
     currentIndex: 0,
     currentPlaylist: 1,
@@ -581,7 +580,6 @@ const app = {
                 .then(response => response.json())
                 .then(data => {
                     _this.songs = data;
-
                     const loadDurations = _this.songs.map(song => {
                         return new Promise(resolve => {
                             const audio = new Audio(song.path);
@@ -593,7 +591,6 @@ const app = {
                             });
                         });
                     });
-
                     Promise.all(loadDurations).then(() => {
                         songLists.forEach((songList, songIndex) => {
                             const songListHTML = _this.songs.map((song, index) => {
@@ -679,24 +676,22 @@ const app = {
                                                         const songEditImagePreview = $("#song-form-edit-container .current-song-image");
                                                         const songEditFile = $("#song-form-edit-container .song-file");
                                                         const songEditAudioPreview = $("#song-form-edit-container .current-song-audio");
-
-                                                        songEditName.value = songData[0].name;
-                                                        singersEdit.value = songData[0].singer;
+                                                        songEditName.value = songData.name;
+                                                        singersEdit.value = songData.singer;
                                                         // Hiển thị ảnh hiện tại nếu có
-                                                        if (songData[0].image) {
-                                                            songEditImagePreview.src = songData[0].image;
+                                                        if (songData.image) {
+                                                            songEditImagePreview.src = songData.image;
                                                             songEditImagePreview.style.display = "block";
                                                         }
 
                                                         // Hiển thị file nhạc hiện tại nếu có
-                                                        if (songData[0].path) {
-                                                            songEditAudioPreview.src = songData[0].path;
+                                                        if (songData.path) {
+                                                            songEditAudioPreview.src = songData.path;
                                                             songEditAudioPreview.style.display = "block";
                                                         }
 
                                                         // Hiển thị form
                                                         formEditContainer.style.display = "block";
-
                                                         // Đóng form khi nhấn nút "Đóng"
                                                         closeEditFormButton.addEventListener("click", function () {
                                                             formEditContainer.style.display = "none";
@@ -737,7 +732,6 @@ const app = {
                                                                     })
                                                                     .then((data) => {
                                                                         console.log("Success:", data);
-
                                                                     })
                                                                     .catch((error) => {
                                                                         console.error("Error:", error);
@@ -888,7 +882,6 @@ const app = {
                                                     const songEditImagePreview = $("#song-form-edit-container .current-song-image");
                                                     const songEditFile = $("#song-form-edit-container .song-file");
                                                     const songEditAudioPreview = $("#song-form-edit-container .current-song-audio");
-
                                                     songEditName.value = songData[0].name;
                                                     singersEdit.value = songData[0].singer;
                                                     // Hiển thị ảnh hiện tại nếu có
@@ -905,7 +898,6 @@ const app = {
 
                                                     // Hiển thị form
                                                     formEditContainer.style.display = "block";
-
                                                     // Đóng form khi nhấn nút "Đóng"
                                                     closeEditFormButton.addEventListener("click", function () {
                                                         formEditContainer.style.display = "none";
@@ -946,7 +938,6 @@ const app = {
                                                                 })
                                                                 .then((data) => {
                                                                     console.log("Success:", data);
-
                                                                 })
                                                                 .catch((error) => {
                                                                     console.error("Error:", error);
@@ -1024,25 +1015,34 @@ const app = {
                         const playlistHTML = data.map((playlist) => {
                             return `
                 <div class="col col-lg-2-4 col-md-3 col-4 mb-30">
-                    <div class="row__item item--playlist" data-playlist-id=${playlist.id}>
+                    <div class="row__item item--playlist">
                         <div class="row__item-container">
                             <div class="row__item-display br-5">
                             <div class="row__item-img" style="background: url('${playlist.image}') no-repeat center center / cover"></div>
                             <div class="row__item-actions">
-                                <div class="btn--play-playlist">
-                                <div class="control-btn btn-toggle-play">
-                                    <i class="bi bi-play-circle"></i>
+                                <div class="btn--play-playlist" data-playlist-id=${playlist.id}>
+                                    <div class="control-btn btn-toggle-play">
+                                        <i class="bi bi-play-circle"></i>
+                                    </div>
                                 </div>
+                    <div class="playlist__song-option song--tab">
+                                <div class="action-btn playlist__song-btn option-btn" data-id=${playlist.id}>
+                                    <i class="bi bi-three-dots btn--icon"></i>
                                 </div>
-                                <div class="action-btn">
-                                <i class="bi bi-three-dots btn--icon"></i>
+                                <!-- Options Menu -->
+                                <div class="playlist-menu options-menu" style="display: none;">
+                                    <ul>
+                                        <li class="edit-playlist">Chỉnh sửa</li>
+                                        <li class="add-playlist">Thêm bài hát</li>
+                                        <li class="delete-playlist">Xóa</li>
+                                    </ul>
                                 </div>
+                            </div>
                             </div>
                             <div class="overlay"></div>
                             </div>
                             <div class="row__item-info">
                             <a href="#" class="row__info-name is-active">${playlist.name}</a>
-                            <h3 class="row__info-creator">${playlist.creator}</h3>
                             </div>
                         </div>
                     </div>
@@ -1050,11 +1050,149 @@ const app = {
                 `;
                         });
                         playlistList.innerHTML = playlistHTML.join("");
+                        const optionBtns = playlistList.querySelectorAll(".option-btn");
+                        const allOptionMenus = playlistList.querySelectorAll(".options-menu");
+                        // Add event listeners for the option button
+                        optionBtns.forEach((btn, index) => {
+                            btn.addEventListener("click", (e) => {
+                                e.preventDefault()
+                                // Close all other options menus
+                                allOptionMenus.forEach((menu) => {
+                                    if (menu !== e.target.closest(".playlist__song-option").querySelector(".options-menu")) {
+                                        menu.style.display = "none";
+                                    }
+                                });
+                                const optionsMenu = e.target.closest(".playlist__song-option").querySelector(".options-menu");
+                                optionsMenu.style.display =
+                                        optionsMenu.style.display === "none" || optionsMenu.style.display === "" ? "block" : "none";
+                                const playlistId = e.target.closest(".playlist__song-btn").getAttribute("data-id");
+                                // Add event listeners for edit and delete actions
+                                const editBtn = optionsMenu.querySelector(".edit-playlist");
+                                const deleteBtn = optionsMenu.querySelector(".delete-playlist");
+                                const addSongBtn = optionsMenu.querySelector(".add-song");
+                                editBtn.addEventListener("click", (e) => {
+                                    e.preventDefault();
+                                    allOptionMenus.forEach((menu) => {
+                                        menu.style.display = "none";
+                                    });
+                                    try {
+                                        fetch(`/musicapp/playlist?playlistId=${playlistId}`, {
+                                            method: "GET",
+                                        })
+                                                .then(response => {
+                                                    return response.json();
+                                                })
+                                                .then(playlistData => {
+                                                    const formEditContainer = $("#playlist-form-edit-container");
+                                                    const closeEditFormButton = $("#playlist-form-edit-container .close-form");
+                                                    const playlistForm = $("#playlist-form-edit-container .song-form");
+                                                    const playlistEditName = $("#playlist-form-edit-container .playlist-name");
+                                                    const playlistEditImage = $("#playlist-form-edit-container .playlist-image");
+                                                    const playlistEditImagePreview = $("#playlist-form-edit-container .current-playlist-image");
+
+                                                    playlistEditName.value = playlistData.name;
+                                                    // Hiển thị ảnh hiện tại nếu có
+                                                    if (playlistData.image) {
+                                                        playlistEditImagePreview.src = playlistData.image;
+                                                        playlistEditImagePreview.style.display = "block";
+                                                    }
+
+                                                    // Hiển thị form
+                                                    formEditContainer.style.display = "block";
+                                                    // Đóng form khi nhấn nút "Đóng"
+                                                    closeEditFormButton.addEventListener("click", function () {
+                                                        formEditContainer.style.display = "none";
+                                                    });
+                                                    // Đảm bảo form ẩn mặc định khi tải trang
+                                                    window.addEventListener("load", function () {
+                                                        formEditContainer.style.display = "none";
+                                                    });
+                                                    playlistForm.addEventListener("submit", function (e) {
+                                                        e.preventDefault();
+                                                        if (!playlistEditName.value) {
+                                                            alert("Vui lòng nhập tên playlistĩ.");
+                                                            return;
+                                                        }
+
+                                                        // Tạo FormData để gửi dữ liệu
+                                                        const formData = new FormData();
+                                                        formData.append("name", playlistEditName.value);
+                                                        formData.append("playlist-image", playlistEditImage.files[0] || "");
+                                                        // Gửi request đến API
+                                                        fetch(`/musicapp/playlist?playlistId=${playlistId}`, {
+                                                            method: "PUT",
+                                                            body: formData,
+                                                            headers: {
+                                                                "Accept": "application/json",
+                                                            },
+                                                        })
+                                                                .then((response) => {
+                                                                    if (response.ok) {
+                                                                        alert("Cập nhật playlist thành công!");
+                                                                        playlistForm.reset();
+                                                                        formEditContainer.style.display = "none";
+                                                                        _this.renderPlaylist()();
+                                                                    }
+                                                                    return response.json();
+                                                                })
+                                                                .then((data) => {
+                                                                    console.log("Success:", data);
+                                                                })
+                                                                .catch((error) => {
+                                                                    console.error("Error:", error);
+                                                                });
+                                                    });
+                                                    // Preview hình ảnh bài hát khi chọn file
+                                                    playlistEditImage.addEventListener("change", (event) => {
+                                                        const file = event.target.files[0];
+                                                        if (file) {
+                                                            const reader = new FileReader();
+                                                            reader.onload = function (e) {
+                                                                playlistEditImagePreview.src = e.target.result;
+                                                                playlistEditImagePreview.style.display = "block";
+                                                            };
+                                                            reader.readAsDataURL(file);
+                                                        }
+                                                    });
+                                                })
+                                                .catch(error => {
+                                                    console.error("Lỗi khi cập nhật playlist:", error);
+                                                });
+                                    } catch (error) {
+                                        alert("Lỗi khi lấy dữ liệu bài hát: " + error.message);
+                                    }
+                                    ;
+                                });
+                                deleteBtn.addEventListener("click", (e) => {
+                                    e.preventDefault();
+                                    allOptionMenus.forEach((menu) => {
+                                        menu.style.display = "none";
+                                    });
+                                    if (confirm(`Bạn có chắc chắn muốn xóa playlist này không?`)) {
+                                        fetch(`/musicapp/playlist?playlistId=${playlistId}`, {
+                                            method: "DELETE",
+                                        })
+                                                .then(response => {
+                                                    if (response.ok) {
+                                                        alert("Playlist đã được xóa thành công!");
+                                                        const activeTab = document.querySelector(".content__navbar-item.active");
+                                                        _this.renderPlaylist()
+                                                    }
+                                                    return response.json();
+                                                })
+                                                .then(data => {
+                                                })
+                                                .catch(error => {
+                                                    console.error("Lỗi khi xóa playlist:", error);
+                                                });
+                                    }
+                                });
+                            });
+                        });
                     });
-                    const playlistItems = $$(".playlist--container .row__item.item--playlist");
+                    const playlistItems = $$(".playlist--container .row__item.item--playlist .btn--play-playlist");
                     Array.from(playlistItems).forEach((playlist) => {
                         playlist.onclick = function (e) {
-                            const playlistBtn = e.target.closest(".btn--play-playlist");
                             const playlistId = playlist.getAttribute("data-playlist-id");
                             _this.currentPlaylist = playlistId;
                             _this.loadCurrentSongPlaylist(_this.currentPlaylist);
@@ -1141,7 +1279,6 @@ const app = {
         const playBtns = Array.from($$(".btn-toggle-play.btn--play-song"));
         const listThemes = Array.from($$(".theme__container .theme__list"));
         const uploadButtons = Array.from($$(".upload-button"));
-
         const formContainer = $("#song-form-container");
         const closeFormButton = $("#song-form-container .close-form");
         const songForm = $("#song-form-container .song-form");
@@ -1151,7 +1288,6 @@ const app = {
         const songImagePreview = $("#song-form-container .current-song-image");
         const songFile = $("#song-form-container .song-file");
         const songAudioPreview = $("#song-form-container .current-song-audio");
-
         // Form và nút đóng
         uploadButtons.forEach((uploadButton) => {
             // Hiện form khi nhấn nút "Upload" hoặc "Chỉnh sửa"
@@ -1202,6 +1338,7 @@ const app = {
                         if (response.ok) {
                             alert("Bài hát đã được thêm thành công!");
                             songForm.reset();
+                            formContainer.style.display = "none";
                             const activeTab = document.querySelector(".content__navbar-item.active");
                             if (activeTab && activeTab.innerText.trim() === "BÀI HÁT") {
                                 _this.renderTapSong();
@@ -1213,7 +1350,6 @@ const app = {
                     })
                     .then((data) => {
                         console.log("Success:", data);
-
                     })
                     .catch((error) => {
                         console.error("Error:", error);
@@ -1238,6 +1374,78 @@ const app = {
                 const audioURL = URL.createObjectURL(file);
                 songAudioPreview.src = audioURL;
                 songAudioPreview.style.display = "block";
+            }
+        });
+        // Handle add playlist
+        const uploadPlaylistButton = $(".upload-playlist-button");
+        const playlistFormContainer = $("#playlist-form-container");
+        const closePlaylistFormButton = $("#playlist-form-container .close-form");
+        const playlistForm = $("#playlist-form-container .song-form");
+        const playlistName = $("#playlist-form-container .playlist-name");
+        const playlistImage = $("#playlist-form-container .playlist-image");
+        const playlistImagePreview = $("#playlist-form-container .current-playlist-image");
+        // Form và nút đóng
+        uploadPlaylistButton.addEventListener("click", function () {
+            playlistFormContainer.style.display = "block";
+        });
+        // Đóng form khi nhấn nút "Đóng"
+        closePlaylistFormButton.addEventListener("click", function () {
+            playlistFormContainer.style.display = "none";
+        });
+        // Đảm bảo form ẩn mặc định khi tải trang
+        window.addEventListener("load", function () {
+            playlistFormContainer.style.display = "none";
+        });
+        playlistForm.addEventListener("submit", function (e) {
+            e.preventDefault();
+            if (!playlistName.value) {
+                alert("Vui lòng nhập tên playlist.");
+                return;
+            }
+
+            if (!playlistImage.files[0]) {
+                alert("Vui lòng chọn một file hình ảnh playlist.");
+                return;
+            }
+
+            // Tạo FormData để gửi dữ liệu
+            const formData = new FormData();
+            formData.append("name", playlistName.value);
+            formData.append("playlist-image", playlistImage.files[0]);
+            // Gửi request đến API
+            fetch("/musicapp/playlist", {
+                method: "POST",
+                body: formData,
+                headers: {
+                    "Accept": "application/json",
+                },
+            })
+                    .then((response) => {
+                        if (response.ok) {
+                            alert("Playlist đã được thêm thành công!");
+                            playlistForm.reset();
+                            playlistFormContainer.style.display = "none";
+                            _this.renderPlaylist()();
+                        }
+                        return response.json();
+                    })
+                    .then((data) => {
+                        console.log("Success:", data);
+                    })
+                    .catch((error) => {
+                        console.error("Error:", error);
+                    });
+        });
+        // Preview hình ảnh bài hát khi chọn file
+        playlistImage.addEventListener("change", (event) => {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    playlistImagePreview.src = e.target.result;
+                    playlistImagePreview.style.display = "block";
+                };
+                reader.readAsDataURL(file);
             }
         });
         // Handle header background when scroll
@@ -1763,7 +1971,6 @@ const app = {
             songTitles.forEach((songTitle) => {
                 songTitle.textContent = this.currentSong?.name;
             });
-
             cdThumbs.forEach((cdThumb) => {
                 cdThumb.innerHTML = `
                 <img src="${this.currentSong?.image}" class="thump-img" alt="">
@@ -1775,17 +1982,14 @@ const app = {
             `;
             });
             audio.src = this.currentSong?.path;
-
             audio.addEventListener("loadedmetadata", () => {
                 const minutes = Math.floor(audio.duration / 60);
                 const seconds = Math.floor(audio.duration % 60);
                 const formattedDuration = `${minutes}:${seconds < 10 ? "0" : ""}${seconds}`;
-
                 durationTimes.forEach((durationTime) => {
                     durationTime.textContent = formattedDuration;
                 });
             });
-
             this.setConfig("currentIndex", this.currentIndex);
         }
     },

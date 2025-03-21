@@ -38,35 +38,36 @@ public class SongServlet extends HttpServlet {
         String playlistIdParam = req.getParameter("playlistId");
         String songIdParam = req.getParameter("songId");
 
-        List<Song> songs;
+        Gson gson = new Gson();
 
         if (playlistIdParam != null) {
             try {
                 Integer playlistId = Integer.valueOf(playlistIdParam);
-                songs = songService.getSongsByPlaylistId(playlistId);
+                List<Song> songs = songService.getSongsByPlaylistId(playlistId);
+                String json = gson.toJson(songs);
+
+                resp.getWriter().write(json);
             } catch (NumberFormatException e) {
                 resp.setStatus(HttpServletResponse.SC_BAD_REQUEST);
                 resp.getWriter().write("{\"error\": \"Invalid playlistId\"}");
-                return;
             }
         } else if (songIdParam != null) {
             try {
                 Integer songId = Integer.valueOf(songIdParam);
-                songs = songService.getSongsById(songId);
+                Song song = songService.getSongById(songId);
+                String json = gson.toJson(song);
+
+                resp.getWriter().write(json);
             } catch (NumberFormatException e) {
                 resp.setStatus(HttpServletResponse.SC_BAD_REQUEST);
                 resp.getWriter().write("{\"error\": \"Invalid playlistId\"}");
-                return;
             }
         } else {
-            songs = songService.getAllSongs();
+            List<Song> songs = songService.getAllSongs();
+            String json = gson.toJson(songs);
+
+            resp.getWriter().write(json);
         }
-
-        // Sử dụng Gson để chuyển đổi danh sách bài hát thành JSON
-        Gson gson = new Gson();
-        String json = gson.toJson(songs);
-
-        resp.getWriter().write(json);
     }
 
     private static final String IMAGE_DIR = "/assets/image/music";
@@ -272,5 +273,4 @@ public class SongServlet extends HttpServlet {
         resp.setStatus(HttpServletResponse.SC_OK);
         resp.getWriter().write("{\"message\": \"Song deleted successfully\"}");
     }
-
 }

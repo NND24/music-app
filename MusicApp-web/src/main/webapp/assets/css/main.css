@@ -3037,6 +3037,10 @@
     width: 150px;
 }
 
+.playlist-menu.options-menu {
+    right: -10px !important;
+}
+
 .options-menu ul {
     list-style-type: none;
     margin: 0 !important;

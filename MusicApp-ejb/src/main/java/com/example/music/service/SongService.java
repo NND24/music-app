@@ -42,11 +42,4 @@ public class SongService {
                 .setParameter("playlistId", playlistId)
                 .getResultList();
     }
-
-    public List<Song> getSongsById(Integer songId) {
-        return em.createQuery(
-                "SELECT s FROM Song s WHERE s.id = :songId", Song.class)
-                .setParameter("songId", songId)
-                .getResultList();
-    }
 }
