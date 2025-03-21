@@ -25,6 +25,7 @@
     flex: 1;
     display: flex;
     width: 100%;
+    justify-content: flex-end;
 }
 
 .header__button {
@@ -3070,6 +3071,30 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+.song-form{
+    overflow-x: hidden;
+    overflow-y: scroll;
+    max-height: 450px;
+}
+
+.song-form::-webkit-scrollbar {
+    width: 4px;
+}
+
+.song-form::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background: transparent;
+}
+
+.song-form::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: #888;
+}
+
+.song-form::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
 .form-group {
     margin-bottom: 15px;
 }
@@ -3079,7 +3104,7 @@
     margin-bottom: 5px;
     font-weight: bold;
     color: var(--text-color);
-    font-size: 1.1rem;
+    font-size: 1.6rem;
 }
 
 input[type="number"],
@@ -3092,6 +3117,7 @@ input[type="file"],
     background: transparent;
     color: var(--text-color);
     border-radius: 5px;
+    font-size: 1.3rem;
 }
 
 button[type="submit"],
@@ -3111,22 +3137,27 @@ button[type="button"]:hover {
     background-color: var(--layout-bg);
 }
 
-button#close-form {
+button.close-form {
     background-color: #f44336;
 }
 
-button#close-form:hover {
+button.close-form:hover {
     background-color: #e53935;
 }
 
-#close-form {
+.close-form {
     position: absolute;
     top: -15px;
     right: -15px;
     padding: 10px;
     border-radius: 999px;
-    background-color: #ffffff;
+    background-color: #fff;
+    color: var(--text-color);
     font-size: 20px;
     cursor: pointer;
     opacity: 1 !important;
+}
+
+.fa-xmark {
+    color: var(--text-color);
 }

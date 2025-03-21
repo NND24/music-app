@@ -12,7 +12,6 @@ public class Song {
 
     private String name;
     private String singer;
-    private String duration;
     private String path;
     private String image;
 
@@ -20,10 +19,9 @@ public class Song {
     public Song() {
     }
 
-    public Song(String name, String singer, String duration, String path, String image) {
+    public Song(String name, String singer, String path, String image) {
         this.name = name;
         this.singer = singer;
-        this.duration = duration;
         this.path = path;
         this.image = image;
     }
@@ -43,14 +41,6 @@ public class Song {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public String getDuration() {
-        return duration;
-    }
-
-    public void setDuration(String duration) {
-        this.duration = duration;
     }
 
     public String getPath() {

@@ -33,264 +33,264 @@
             <!-- Header -->
             <header class="header">
                 <div class="header__width-search">
-                    <button class="header__button">
-                        <i class="bi bi-arrow-left"></i>
-                    </button>
-                    <button class="header__button button--disabled">
-                        <i class="bi bi-arrow-right"></i>
-                    </button>
-                    <div class="header__search">
-                        <div class="header__search-btn"><i class="bi bi-search"></i></div>
-                        <input type="text" placeholder="Nhập tên bài hát, nghệ sĩ hoặc MV..." class="header__search-input" />
-                        <div class="header__search-history">
-                            <ul class="header__search-list">
-                                <li class="header__search-item">
-                                    <i class="bi bi-search"></i>
-                                    <div class="header__item-link">Sơn Tùng MTP</div>
-                                </li>
-                                <li class="header__search-item">
-                                    <i class="bi bi-search"></i>
-                                    <div class="header__item-link">Nhạc lofi</div>
-                                </li>
-                                <li class="header__search-item">
-                                    <i class="bi bi-search"></i>
-                                    <div class="header__item-link">Hongkong1</div>
-                                </li>
-                                <li class="header__search-item">
-                                    <i class="bi bi-search"></i>
-                                    <div class="header__item-link">Soobin Hoàng Sơn</div>
-                                </li>
-                                <li class="header__search-item">
-                                    <i class="bi bi-search"></i>
-                                    <div class="header__item-link">Tháng 4</div>
-                                </li>
-                                <li class="header__search-item">
-                                    <i class="bi bi-search"></i>
-                                    <div class="header__item-link">Bông hoa đẹp nhất</div>
-                                </li>
-                            </ul>
-                        </div>
+                    <!--                    <button class="header__button">
+                                            <i class="bi bi-arrow-left"></i>
+                                        </button>
+                                        <button class="header__button button--disabled">
+                                            <i class="bi bi-arrow-right"></i>
+                                        </button>-->
+                    <!--                    <div class="header__search">
+                                            <div class="header__search-btn"><i class="bi bi-search"></i></div>
+                                            <input type="text" placeholder="Nhập tên bài hát, nghệ sĩ hoặc MV..." class="header__search-input" />
+                                            <div class="header__search-history">
+                                                <ul class="header__search-list">
+                                                    <li class="header__search-item">
+                                                        <i class="bi bi-search"></i>
+                                                        <div class="header__item-link">Sơn Tùng MTP</div>
+                                                    </li>
+                                                    <li class="header__search-item">
+                                                        <i class="bi bi-search"></i>
+                                                        <div class="header__item-link">Nhạc lofi</div>
+                                                    </li>
+                                                    <li class="header__search-item">
+                                                        <i class="bi bi-search"></i>
+                                                        <div class="header__item-link">Hongkong1</div>
+                                                    </li>
+                                                    <li class="header__search-item">
+                                                        <i class="bi bi-search"></i>
+                                                        <div class="header__item-link">Soobin Hoàng Sơn</div>
+                                                    </li>
+                                                    <li class="header__search-item">
+                                                        <i class="bi bi-search"></i>
+                                                        <div class="header__item-link">Tháng 4</div>
+                                                    </li>
+                                                    <li class="header__search-item">
+                                                        <i class="bi bi-search"></i>
+                                                        <div class="header__item-link">Bông hoa đẹp nhất</div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>-->
+                    <div class="header__nav">
+                        <ul class="header__nav-list">
+                            <li class="header__nav-item">
+                                <div class="header__nav-btn nav-btn--theme">
+                                    <svg width="20" height="20" class="header__nav-icon" viewBox="0 0 20 20">
+                                    <defs>
+                                    <linearGradient id="j32lhg93hd" x1="62.206%" x2="18.689%" y1="70.45%" y2="39.245%">
+                                    <stop offset="0%" stop-color="#F81212"></stop>
+                                    <stop offset="100%" stop-color="red"></stop>
+                                    </linearGradient>
+                                    <linearGradient id="hjoavsus6g" x1="50%" x2="11.419%" y1="23.598%" y2="71.417%">
+                                    <stop offset="0%" stop-color="#00F"></stop>
+                                    <stop offset="100%" stop-color="#0031FF"></stop>
+                                    </linearGradient>
+                                    <linearGradient id="la1y5u3dvi" x1="65.655%" x2="25.873%" y1="18.825%" y2="56.944%">
+                                    <stop offset="0%" stop-color="#FFA600"></stop>
+                                    <stop offset="100%" stop-color="orange"></stop>
+                                    </linearGradient>
+                                    <linearGradient id="2dsmrlvdik" x1="24.964%" x2="63.407%" y1="8.849%" y2="55.625%">
+                                    <stop offset="0%" stop-color="#13EFEC"></stop>
+                                    <stop offset="100%" stop-color="#00E8DF"></stop>
+                                    </linearGradient>
+                                    <filter
+                                        id="4a7imk8mze"
+                                        width="230%"
+                                        height="230%"
+                                        x="-65%"
+                                        y="-65%"
+                                        filterUnits="objectBoundingBox"
+                                        >
+                                        <feGaussianBlur in="SourceGraphic" stdDeviation="3.9"></feGaussianBlur>
+                                    </filter>
+                                    <filter
+                                        id="301mo6jeah"
+                                        width="312.7%"
+                                        height="312.7%"
+                                        x="-106.4%"
+                                        y="-106.4%"
+                                        filterUnits="objectBoundingBox"
+                                        >
+                                        <feGaussianBlur in="SourceGraphic" stdDeviation="3.9"></feGaussianBlur>
+                                    </filter>
+                                    <filter
+                                        id="b2zvzgq7fj"
+                                        width="295%"
+                                        height="295%"
+                                        x="-97.5%"
+                                        y="-97.5%"
+                                        filterUnits="objectBoundingBox"
+                                        >
+                                        <feGaussianBlur in="SourceGraphic" stdDeviation="3.9"></feGaussianBlur>
+                                    </filter>
+                                    <filter
+                                        id="a1wq161tvl"
+                                        width="256%"
+                                        height="256%"
+                                        x="-78%"
+                                        y="-78%"
+                                        filterUnits="objectBoundingBox"
+                                        >
+                                        <feGaussianBlur in="SourceGraphic" stdDeviation="3.9"></feGaussianBlur>
+                                    </filter>
+                                    <path
+                                        id="qtpqrj1oda"
+                                        d="M3.333 14.167V5.833l-1.666.834L0 3.333 3.333 0h3.334c.04 1.57.548 2.4 1.524 2.492l.142.008C9.403 2.478 9.958 1.645 10 0h3.333l3.334 3.333L15 6.667l-1.667-.834v8.334h-10z"
+                                        ></path>
+                                    <path id="jggzvnjgfc" d="M0 0H20V20H0z"></path>
+                                    <path
+                                        id="2eiwxjmc7m"
+                                        d="M3.333 14.167V5.833l-1.666.834L0 3.333 3.333 0h3.334c.04 1.57.548 2.4 1.524 2.492l.142.008C9.403 2.478 9.958 1.645 10 0h3.333l3.334 3.333L15 6.667l-1.667-.834v8.334h-10z"
+                                        ></path>
+                                    </defs>
+                                    <g fill="none" fill-rule="evenodd" transform="translate(2 3)">
+                                    <mask id="tinejqaasb" fill="#fff">
+                                        <use xlink:href="#qtpqrj1oda"></use>
+                                    </mask>
+                                    <use fill="#FFF" fill-opacity="0" xlink:href="#qtpqrj1oda"></use>
+                                    <g mask="url(#tinejqaasb)">
+                                    <g transform="translate(-2 -3)">
+                                    <mask id="uf3ckvfvpf" fill="#fff">
+                                        <use xlink:href="#jggzvnjgfc"></use>
+                                    </mask>
+                                    <use fill="#D8D8D8" xlink:href="#jggzvnjgfc"></use>
+                                    <circle
+                                        cx="8.9"
+                                        cy="6.8"
+                                        r="9"
+                                        fill="url(#j32lhg93hd)"
+                                        filter="url(#4a7imk8mze)"
+                                        mask="url(#uf3ckvfvpf)"
+                                        ></circle>
+                                    <circle
+                                        cx="9.3"
+                                        cy="13.7"
+                                        r="5.5"
+                                        fill="url(#hjoavsus6g)"
+                                        filter="url(#301mo6jeah)"
+                                        mask="url(#uf3ckvfvpf)"
+                                        ></circle>
+                                    <circle
+                                        cx="15.9"
+                                        cy="6.9"
+                                        r="6"
+                                        fill="url(#la1y5u3dvi)"
+                                        filter="url(#b2zvzgq7fj)"
+                                        mask="url(#uf3ckvfvpf)"
+                                        ></circle>
+                                    <circle
+                                        cx="16.4"
+                                        cy="17.7"
+                                        r="7.5"
+                                        fill="url(#2dsmrlvdik)"
+                                        filter="url(#a1wq161tvl)"
+                                        mask="url(#uf3ckvfvpf)"
+                                        ></circle>
+                                    </g>
+                                    </g>
+                                    <use fill="#FFF" fill-opacity="0.05" xlink:href="#2eiwxjmc7m"></use>
+                                    </g>
+                                    </svg>
+                                </div>
+                            </li>
+                            <li class="header__nav-item hide-on-mobile">
+                                <div class="header__nav-btn header__nav-icon upload-button">
+                                    <i class="bi bi-upload"></i>
+                                </div>
+                            </li>
+                            <li class="header__nav-item hide-on-mobile">
+                                <div class="header__nav-btn btn--nav-setting">
+                                    <i class="bi bi-gear"></i>
+                                    <div class="setting__menu">
+                                        <div class="setting__nav">
+                                            <div class="setting__item">
+                                                <div class="setting__item-content">
+                                                    <i class="bi bi-slash-circle"></i>
+                                                    <span>Danh sách chặn</span>
+                                                </div>
+                                            </div>
+                                            <div class="setting__item">
+                                                <div class="setting__item-content">
+                                                    <i class="bi bi-badge-hd"></i>
+                                                    <span>Chất lượng nhạc</span>
+                                                </div>
+                                                <i class="bi bi-chevron-right"></i>
+                                            </div>
+                                            <div class="setting__item">
+                                                <div class="setting__item-content">
+                                                    <i class="bi bi-play-circle"></i>
+                                                    <span>Giao diện</span>
+                                                </div>
+                                                <i class="bi bi-chevron-right"></i>
+                                            </div>
+                                        </div>
+                                        <div class="setting__subnav">
+                                            <div class="setting__item">
+                                                <div class="setting__item-content">
+                                                    <i class="bi bi-exclamation-circle"></i>
+                                                    <span>Giới thiệu</span>
+                                                </div>
+                                            </div>
+                                            <div class="setting__item">
+                                                <div class="setting__item-content">
+                                                    <i class="bi bi-telephone"></i>
+                                                    <span>Liên hệ</span>
+                                                </div>
+                                            </div>
+                                            <div class="setting__item">
+                                                <div class="setting__item-content">
+                                                    <i class="bi bi-badge-ad"></i>
+                                                    <span>Quảng cáo</span>
+                                                </div>
+                                            </div>
+                                            <div class="setting__item">
+                                                <div class="setting__item-content">
+                                                    <i class="bi bi-file-earmark-text"></i>
+                                                    <span>Thỏa thuận sử dụng</span>
+                                                </div>
+                                            </div>
+                                            <div class="setting__item">
+                                                <div class="setting__item-content">
+                                                    <i class="bi bi-shield-check"></i>
+                                                    <span>Chính sách bảo mật</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="header__nav-item">
+                                <div class="header__nav-btn btn--nav-log">
+                                    <img src="./assets/image/avatar/avatar.jpg" alt="" />
+                                    <div class="log__menu">
+                                        <div class="setting__nav">
+                                            <div class="setting__item">
+                                                <div class="setting__item-content">
+                                                    <i class="bi bi-gem"></i>
+                                                    <span>Nâng cấp vip</span>
+                                                </div>
+                                            </div>
+                                            <div class="setting__item">
+                                                <div class="setting__item-content">
+                                                    <i class="bi bi-credit-card"></i>
+                                                    <span>Mua code vip</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="setting__subnav">
+                                            <div class="setting__item">
+                                                <div class="setting__item-content">
+                                                    <i class="bi bi-box-arrow-right"></i>
+                                                    <span>Đăng suất</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
                     </div>
-                </div>
-                <div class="header__nav">
-                    <ul class="header__nav-list">
-                        <li class="header__nav-item">
-                            <div class="header__nav-btn nav-btn--theme">
-                                <svg width="20" height="20" class="header__nav-icon" viewBox="0 0 20 20">
-                                <defs>
-                                <linearGradient id="j32lhg93hd" x1="62.206%" x2="18.689%" y1="70.45%" y2="39.245%">
-                                <stop offset="0%" stop-color="#F81212"></stop>
-                                <stop offset="100%" stop-color="red"></stop>
-                                </linearGradient>
-                                <linearGradient id="hjoavsus6g" x1="50%" x2="11.419%" y1="23.598%" y2="71.417%">
-                                <stop offset="0%" stop-color="#00F"></stop>
-                                <stop offset="100%" stop-color="#0031FF"></stop>
-                                </linearGradient>
-                                <linearGradient id="la1y5u3dvi" x1="65.655%" x2="25.873%" y1="18.825%" y2="56.944%">
-                                <stop offset="0%" stop-color="#FFA600"></stop>
-                                <stop offset="100%" stop-color="orange"></stop>
-                                </linearGradient>
-                                <linearGradient id="2dsmrlvdik" x1="24.964%" x2="63.407%" y1="8.849%" y2="55.625%">
-                                <stop offset="0%" stop-color="#13EFEC"></stop>
-                                <stop offset="100%" stop-color="#00E8DF"></stop>
-                                </linearGradient>
-                                <filter
-                                    id="4a7imk8mze"
-                                    width="230%"
-                                    height="230%"
-                                    x="-65%"
-                                    y="-65%"
-                                    filterUnits="objectBoundingBox"
-                                    >
-                                    <feGaussianBlur in="SourceGraphic" stdDeviation="3.9"></feGaussianBlur>
-                                </filter>
-                                <filter
-                                    id="301mo6jeah"
-                                    width="312.7%"
-                                    height="312.7%"
-                                    x="-106.4%"
-                                    y="-106.4%"
-                                    filterUnits="objectBoundingBox"
-                                    >
-                                    <feGaussianBlur in="SourceGraphic" stdDeviation="3.9"></feGaussianBlur>
-                                </filter>
-                                <filter
-                                    id="b2zvzgq7fj"
-                                    width="295%"
-                                    height="295%"
-                                    x="-97.5%"
-                                    y="-97.5%"
-                                    filterUnits="objectBoundingBox"
-                                    >
-                                    <feGaussianBlur in="SourceGraphic" stdDeviation="3.9"></feGaussianBlur>
-                                </filter>
-                                <filter
-                                    id="a1wq161tvl"
-                                    width="256%"
-                                    height="256%"
-                                    x="-78%"
-                                    y="-78%"
-                                    filterUnits="objectBoundingBox"
-                                    >
-                                    <feGaussianBlur in="SourceGraphic" stdDeviation="3.9"></feGaussianBlur>
-                                </filter>
-                                <path
-                                    id="qtpqrj1oda"
-                                    d="M3.333 14.167V5.833l-1.666.834L0 3.333 3.333 0h3.334c.04 1.57.548 2.4 1.524 2.492l.142.008C9.403 2.478 9.958 1.645 10 0h3.333l3.334 3.333L15 6.667l-1.667-.834v8.334h-10z"
-                                    ></path>
-                                <path id="jggzvnjgfc" d="M0 0H20V20H0z"></path>
-                                <path
-                                    id="2eiwxjmc7m"
-                                    d="M3.333 14.167V5.833l-1.666.834L0 3.333 3.333 0h3.334c.04 1.57.548 2.4 1.524 2.492l.142.008C9.403 2.478 9.958 1.645 10 0h3.333l3.334 3.333L15 6.667l-1.667-.834v8.334h-10z"
-                                    ></path>
-                                </defs>
-                                <g fill="none" fill-rule="evenodd" transform="translate(2 3)">
-                                <mask id="tinejqaasb" fill="#fff">
-                                    <use xlink:href="#qtpqrj1oda"></use>
-                                </mask>
-                                <use fill="#FFF" fill-opacity="0" xlink:href="#qtpqrj1oda"></use>
-                                <g mask="url(#tinejqaasb)">
-                                <g transform="translate(-2 -3)">
-                                <mask id="uf3ckvfvpf" fill="#fff">
-                                    <use xlink:href="#jggzvnjgfc"></use>
-                                </mask>
-                                <use fill="#D8D8D8" xlink:href="#jggzvnjgfc"></use>
-                                <circle
-                                    cx="8.9"
-                                    cy="6.8"
-                                    r="9"
-                                    fill="url(#j32lhg93hd)"
-                                    filter="url(#4a7imk8mze)"
-                                    mask="url(#uf3ckvfvpf)"
-                                    ></circle>
-                                <circle
-                                    cx="9.3"
-                                    cy="13.7"
-                                    r="5.5"
-                                    fill="url(#hjoavsus6g)"
-                                    filter="url(#301mo6jeah)"
-                                    mask="url(#uf3ckvfvpf)"
-                                    ></circle>
-                                <circle
-                                    cx="15.9"
-                                    cy="6.9"
-                                    r="6"
-                                    fill="url(#la1y5u3dvi)"
-                                    filter="url(#b2zvzgq7fj)"
-                                    mask="url(#uf3ckvfvpf)"
-                                    ></circle>
-                                <circle
-                                    cx="16.4"
-                                    cy="17.7"
-                                    r="7.5"
-                                    fill="url(#2dsmrlvdik)"
-                                    filter="url(#a1wq161tvl)"
-                                    mask="url(#uf3ckvfvpf)"
-                                    ></circle>
-                                </g>
-                                </g>
-                                <use fill="#FFF" fill-opacity="0.05" xlink:href="#2eiwxjmc7m"></use>
-                                </g>
-                                </svg>
-                            </div>
-                        </li>
-                        <li class="header__nav-item hide-on-mobile">
-                            <div class="header__nav-btn header__nav-icon upload-button">
-                                <i class="bi bi-upload"></i>
-                            </div>
-                        </li>
-                        <li class="header__nav-item hide-on-mobile">
-                            <div class="header__nav-btn btn--nav-setting">
-                                <i class="bi bi-gear"></i>
-                                <div class="setting__menu">
-                                    <div class="setting__nav">
-                                        <div class="setting__item">
-                                            <div class="setting__item-content">
-                                                <i class="bi bi-slash-circle"></i>
-                                                <span>Danh sách chặn</span>
-                                            </div>
-                                        </div>
-                                        <div class="setting__item">
-                                            <div class="setting__item-content">
-                                                <i class="bi bi-badge-hd"></i>
-                                                <span>Chất lượng nhạc</span>
-                                            </div>
-                                            <i class="bi bi-chevron-right"></i>
-                                        </div>
-                                        <div class="setting__item">
-                                            <div class="setting__item-content">
-                                                <i class="bi bi-play-circle"></i>
-                                                <span>Giao diện</span>
-                                            </div>
-                                            <i class="bi bi-chevron-right"></i>
-                                        </div>
-                                    </div>
-                                    <div class="setting__subnav">
-                                        <div class="setting__item">
-                                            <div class="setting__item-content">
-                                                <i class="bi bi-exclamation-circle"></i>
-                                                <span>Giới thiệu</span>
-                                            </div>
-                                        </div>
-                                        <div class="setting__item">
-                                            <div class="setting__item-content">
-                                                <i class="bi bi-telephone"></i>
-                                                <span>Liên hệ</span>
-                                            </div>
-                                        </div>
-                                        <div class="setting__item">
-                                            <div class="setting__item-content">
-                                                <i class="bi bi-badge-ad"></i>
-                                                <span>Quảng cáo</span>
-                                            </div>
-                                        </div>
-                                        <div class="setting__item">
-                                            <div class="setting__item-content">
-                                                <i class="bi bi-file-earmark-text"></i>
-                                                <span>Thỏa thuận sử dụng</span>
-                                            </div>
-                                        </div>
-                                        <div class="setting__item">
-                                            <div class="setting__item-content">
-                                                <i class="bi bi-shield-check"></i>
-                                                <span>Chính sách bảo mật</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="header__nav-item">
-                            <div class="header__nav-btn btn--nav-log">
-                                <img src="./assets/image/avatar/avatar.jpg" alt="" />
-                                <div class="log__menu">
-                                    <div class="setting__nav">
-                                        <div class="setting__item">
-                                            <div class="setting__item-content">
-                                                <i class="bi bi-gem"></i>
-                                                <span>Nâng cấp vip</span>
-                                            </div>
-                                        </div>
-                                        <div class="setting__item">
-                                            <div class="setting__item-content">
-                                                <i class="bi bi-credit-card"></i>
-                                                <span>Mua code vip</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="setting__subnav">
-                                        <div class="setting__item">
-                                            <div class="setting__item-content">
-                                                <i class="bi bi-box-arrow-right"></i>
-                                                <span>Đăng suất</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
             </header>
 
             <!-- Playlist sidebar -->
@@ -362,7 +362,7 @@
                                         <div class="container__header-actions">
                                             <div class="button container__header-btn upload-button hide-on-mobile">
                                                 <i class="bi bi-upload"></i>
-                                                <span>Tải lên</span>
+                                                <span>Tải lên bài hát</span>
                                             </div>
                                             <div class="button container__header-btn button-primary btn--play-all">
                                                 <i class="bi bi-play-fill"></i>
@@ -486,7 +486,7 @@
                                     <div class="container__list song--container-list">
                                         <div class="playlist__header">
                                             <span class="playlist__header-title">BÀI HÁT</span>
-                                            <span class="playlist__header-time">THỜI GIAN</span>
+                                            <span class="playlist__header-time"></span>
                                         </div>
                                         <div class="playlist__lis-tap-song"></div>
                                     </div>
@@ -514,27 +514,17 @@
                 </div>
 
                 <div id="song-form-container" class="form-container" style="display: none">
-                    <form id="song-form" enctype="multipart/form-data">
+                    <form class="song-form" enctype="multipart/form-data">
                         <div class="form-group">
                             <label for="song-name">Tên Bài Hát:</label>
-                            <input type="text" id="song-name" name="song-name" placeholder="Nhập tên bài hát" required />
-                        </div>
-
-                        <div class="form-group">
-                            <label for="playlist">Chọn Playlist:</label>
-                            <select id="playlist" name="playlist" required>
-                                <option value="">Chọn Playlist</option>
-                                <option value="playlist1">Playlist 1</option>
-                                <option value="playlist2">Playlist 2</option>
-                                <option value="playlist3">Playlist 3</option>
-                            </select>
+                            <input type="text" class="song-name" name="song-name" placeholder="Nhập tên bài hát" required />
                         </div>
 
                         <div class="form-group">
                             <label for="singers">Ca Sĩ:</label>
                             <input
                                 type="text"
-                                id="singers"
+                                class="singers"
                                 name="singers"
                                 placeholder="Nhập tên ca sĩ, cách nhau bằng dấu phẩy"
                                 required
@@ -542,28 +532,54 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="song-duration">Độ Dài Bài Hát (phút):</label>
+                            <label for="song-image">Hình Ảnh Bài Hát:</label>
+                            <img class="current-song-image" src="" alt="Ảnh bài hát" style="max-width: 100px; display: none;" />
+                            <input type="file" class="song-image" name="song-image" accept="image/*" required />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="song-file">Tải Lên Bài Hát (MP3):</label>
+                            <audio class="current-song-audio" controls style="display: none;"></audio>
+                            <input type="file" class="song-file" name="song-file" accept="audio/mp3" required />
+                        </div>
+
+                        <button type="submit" class="btn-submit">Lưu Bài Hát</button>
+                        <i class="fa-solid fa-xmark btn-close close-form"></i>
+                    </form>
+                </div>
+
+                <div id="song-form-edit-container" class="form-container" style="display: none">
+                    <form class="song-form" enctype="multipart/form-data">
+                        <div class="form-group">
+                            <label for="song-name">Tên Bài Hát:</label>
+                            <input type="text" class="song-name" name="song-name" placeholder="Nhập tên bài hát" required />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="singers">Ca Sĩ:</label>
                             <input
-                                type="number"
-                                id="song-duration"
-                                name="song-duration"
-                                placeholder="Nhập độ dài bài hát (phút)"
+                                type="text"
+                                class="singers"
+                                name="singers"
+                                placeholder="Nhập tên ca sĩ, cách nhau bằng dấu phẩy"
                                 required
                                 />
                         </div>
 
                         <div class="form-group">
                             <label for="song-image">Hình Ảnh Bài Hát:</label>
-                            <input type="file" id="song-image" name="song-image" accept="image/*" required />
+                            <img class="current-song-image" src="" alt="Ảnh bài hát" style="max-width: 100px; display: none;" />
+                            <input type="file" class="song-image" name="song-image" accept="image/*" />
                         </div>
 
                         <div class="form-group">
                             <label for="song-file">Tải Lên Bài Hát (MP3):</label>
-                            <input type="file" id="song-file" name="song-file" accept="audio/mp3" required />
+                            <audio class="current-song-audio" controls style="display: none;"></audio>
+                            <input type="file" class="song-file" name="song-file" accept="audio/mp3" />
                         </div>
 
-                        <button type="submit" class="btn-submit">Lưu Bài Hát</button>
-                        <i id="close-form" class="fa-solid fa-xmark btn-close"></i>
+                        <button type="submit" class="btn-submit">Cập nhật Bài Hát</button>
+                        <i class="fa-solid fa-xmark btn-close close-form"></i>
                     </form>
                 </div>
             </div>
@@ -860,7 +876,7 @@
                             <div class="progress__track song--track">
                                 <div class="progress__track-update"></div>
                             </div>
-                            <span class="durationtime">04:13</span>
+                            <span class="durationtime">00:00</span>
                         </div>
                     </div>
                     <div class="player__options hide-on-mobile">
